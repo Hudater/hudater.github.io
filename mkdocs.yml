@@ -1,4 +1,5 @@
 ---
+# Metadata
 site_name: Hudater Docs
 site_description: Centralized documentation for docker and more...
 site_author: Hudater
@@ -9,11 +10,16 @@ site_url: https://hudater.github.io
 repo_name: Hudater/hudater.github.io
 repo_url: https://github.com/Hudater/hudater.github.io
 
-copyright: Copyright &copy; 2022 Hudater
 
+# Theme setup
 theme:
   name: material
   language: en
+  logo: assets/logo.jpeg
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.tabs.sticky
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -32,3 +38,25 @@ theme:
   font:
     text: "Noto Sans"
     code: "Encode Sans Expanded"
+
+
+# Navigation setup
+nav:
+  - Home: index.md
+  - Media:
+    - Sonarr:
+      - Setup: media/sonarr.md
+    - Radarr: media/radarr.md
+  - Networking:
+    - Architecture: networking/architecture.md
+  - Linux:
+    - Arch: linux/arch.md
+
+
+# Footer section
+copyright: Copyright &copy; 2022 Hudater
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Hudater
