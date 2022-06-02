@@ -64,6 +64,11 @@ plugins:
   - tags:
       tags_file: about/tags.md
 
+# Sortable tables
+extra_javascript:
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+  - javascripts/tablesort.js
+
 # Navigation setup
 nav:
   - Home: index.md

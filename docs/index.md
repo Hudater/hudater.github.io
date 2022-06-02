@@ -19,17 +19,17 @@ I hope it may be useful to you too!
 
 ## Service and Port mapping
 
-??? Service and Port mapping "**Docker** - [CLICK TO EXPAND]"
+???+ Service and Port mapping "**Docker** - [CLICK TO EXPAND]"
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
+    | :fontawesome-brands-docker: Service Name      | :material-import: Port Number                          |
+    | :-------------------------------------------- | :----------------------------------------------------- |
+    | `GET`                                         | :material-check:     Fetch resource                    |
+    | `PUT`                                         | :material-check-all: Update resource                   |
+    | `DELETE`                                      | :material-close:     Delete resource                   |
 
 ??? Service and Port mapping "**Bare Metal** - [CLICK TO EXPAND]"
 
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
+    Adguard
 
 !!! info
 
