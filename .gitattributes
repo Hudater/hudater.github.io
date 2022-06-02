@@ -1,4 +1,5 @@
-docs/* linguist-documentation=false
-docs/* linguist-vendored
-overrides/* linguist-documentation=false
-overrides/* linguist-vendored
+# docs/* linguist-documentation=false
+# docs/* linguist-vendored
+# overrides/* linguist-documentation=false
+# overrides/* linguist-vendored
+* text=auto
