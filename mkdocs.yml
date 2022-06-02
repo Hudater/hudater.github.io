@@ -15,7 +15,8 @@ repo_url: https://github.com/Hudater/hudater.github.io
 theme:
   name: material
   language: en
-  custom_dir: overrides
+  # custom_dir: overrides
+  # custom_dir: overrideslaskjflk #TODO
   logo: assets/logo.jpg
   features:
     - navigation.tabs
