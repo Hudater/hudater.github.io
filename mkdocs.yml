@@ -41,7 +41,7 @@ theme:
     code: "Encode Sans Expanded"
 
 # Required for tags to function
-  markdown_extensions:
+markdown_extensions:
   - admonition
   - meta
   - attr_list
@@ -50,17 +50,16 @@ theme:
   - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdown-extensions
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
 
-  plugins:
+plugins:
   - search
   - tags:
-      tags_file: tags.md
+      tags_file: about/tags.md
 
 # Navigation setup
 nav:
