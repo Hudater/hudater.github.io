@@ -4,8 +4,8 @@ site_name: Hudater Docs
 site_description: Centralized documentation for docker and more...
 site_author: Hudater
 site_url: https://hudater.github.io
-# edit_uri: edit/master/docs/
-# docs_dir: docs
+edit_uri: edit/main/docs/
+docs_dir: docs
 
 repo_name: Hudater/hudater.github.io
 repo_url: https://github.com/Hudater/hudater.github.io
@@ -15,7 +15,8 @@ repo_url: https://github.com/Hudater/hudater.github.io
 theme:
   name: material
   language: en
-  logo: assets/logo.jpeg
+  custom_dir: overrides
+  logo: assets/logo.jpg
   features:
     - navigation.tabs
     - navigation.top
@@ -23,15 +24,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: light blue
-      accent: light blue
+      primary: red
+      accent: red
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: red
-      accent: red
+      primary: light blue
+      accent: light blue
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
@@ -39,6 +40,27 @@ theme:
     text: "Noto Sans"
     code: "Encode Sans Expanded"
 
+# Required for tags to function
+  markdown_extensions:
+  - admonition
+  - meta
+  - attr_list
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdown-extensions
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+  plugins:
+  - search
+  - tags:
+      tags_file: tags.md
 
 # Navigation setup
 nav:
@@ -51,11 +73,11 @@ nav:
     - Architecture: networking/architecture.md
   - Linux:
     - Arch: linux/arch.md
+  - About:
+    - Tags: about/tags.md
 
 
 # Footer section
-copyright: Copyright &copy; 2022 Hudater
-
 extra:
   social:
     - icon: fontawesome/brands/github
