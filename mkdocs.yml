@@ -77,10 +77,9 @@ nav:
   - Media:
     - Bazarr: media/bazarr.md
     - Radarr: media/radarr.md
-    - Sonarr:
-      - Setup: media/sonarr.md
+    - Sonarr: media/sonarr.md
   - Networking:
-    - Architecture: networking/architecture.md
+    - Authelia: networking/authelia.md
   - Linux:
     - Arch: linux/arch.md
   - Misc:

@@ -25,11 +25,8 @@ I hope it may be useful to you too!
 
 ???+ Docker "**Docker** - [CLICK TO EXPAND]"
 
-    - [x] [Bazarr](media/bazarr.md){:target="_blank" rel="noopener noreferrer"}
-    - [x] [asf](){:target="_blank" rel="noopener noreferrer"}
-        * [x] In hac habitasse platea dictumst
-        * [x] In scelerisque nibh non dolor mollis congue sed et metus
-        * [ ] Praesent sed risus massa
+    - [x] [Authelia](networking/authelia.md "SSO Auth")
+    - [x] [Bazarr](media/bazarr.md "Subtitles for Sonarr and Radarr")
     - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
 
 
