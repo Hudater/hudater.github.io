@@ -82,7 +82,7 @@ nav:
     - Authelia: networking/authelia.md
     - Traefik: networking/traefik.md
   - Linux:
-    - Arch: linux/arch.md
+    - Basic: linux/basic.md
   - Misc:
     - Tags: misc/tags.md
 

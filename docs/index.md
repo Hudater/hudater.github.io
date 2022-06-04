@@ -38,3 +38,14 @@ I hope it may be useful to you too!
         * [x] In scelerisque nibh non dolor mollis congue sed et metus
         * [ ] Praesent sed risus massa
     - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+
+
+## Miscellaneous
+
+!!! info
+
+    This section links Linux docs, dotfiles etc
+
+???+ Linux "**Linux** - [CLICK TO EXPAND]"
+
+    - [x] [Basic Linux](linux/basic.md "Basic setup for Linux post-install")
