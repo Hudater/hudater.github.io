@@ -65,7 +65,7 @@ theme:
   custom_dir: overrides
   # custom_dir: overrideslaskjflk
   logo: assets/logo.jpg
-  favicon: assets/favicon.ico
+  favicon: assets/logo.jpg
   icon:
     repo: fontawesome/brands/github
   features:
