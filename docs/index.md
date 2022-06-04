@@ -29,7 +29,6 @@ I hope it may be useful to you too!
     - [x] [Bazarr](media/bazarr.md "Subtitles for Sonarr and Radarr")
     - [x] [Traefik](networking/traefik.md "Reverse Proxy")
 
-
 ??? Bare "**Bare Metal** - [CLICK TO EXPAND]"
 
     - [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit

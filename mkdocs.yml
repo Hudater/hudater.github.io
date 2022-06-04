@@ -1,4 +1,53 @@
 ---
+# Navigation setup
+nav:
+  - Home: index.md
+  - Linux:
+    - Basic: linux/basic.md
+  - Media:
+    - Bazarr: media/bazarr.md
+    - Flaresolverr: media/flaresolverr.md
+    - Jellyfin: media/jellyfin.md
+    - Jellyseerr: media/jellyseerr.md
+    - Prowlarr: media/prowlarr.md
+    - qBittorrent: media/qbittorrent.md
+    - Radarr: media/radarr.md
+    - Requestrr: media/requestrr.md
+    - Sonarr: media/sonarr.md
+  - Networking:
+    - Adguard: networking/adguard.md
+    - Authelia: networking/authelia.md
+    - Cloudflare Tunnel: networking/cloudflared.md
+    - DuckDNS: networking/duckdns.md
+    - Librespeed: networking/librespeed.md
+    - Traefik: networking/traefik.md
+    - WgEasy: networking/wgeasy.md
+  - Status:
+    - Dozzle: status/dozzle.md
+    - Heimdall: status/heimdall.md
+    - Homarr: status/homarr.md
+    - Homer: status/homer.md
+    - Scrutiny: status/scrutiny.md
+    - Uptime Kuma: status/uptime-kuma.md
+  - Fileserver:
+    - Filebrowser: filesv/filebrowser.md
+    - Samba: filesv/samba.md
+    - Syncthing: filesv/syncthing.md
+  - Management:
+    - Olivetin: management/olivetin.md
+    - Portainer:
+      - Portainer-CE: management/portainer-ce.md
+      - Portainer-Agent: management/portainer-agent.md
+    - Code Server: management/vscode.md
+    - Watchtower: management/watchtower.md
+  - Misc:
+    - Rickroll: misc/rickroll.md
+    - Snapdrop: misc/snapdrop.md
+  - Extras:
+    - Tags: extras/tags.md
+    - Resources: extras/resources.md
+    - Credits: extras/credits.md
+
 # Metadata
 site_name: Hudater Docs
 site_description: Centralized documentation for docker and more...
@@ -6,10 +55,8 @@ site_author: Hudater
 site_url: https://www.haops.dev/
 edit_uri: edit/main/docs/
 docs_dir: docs
-
 repo_name: Hudater/hudater.github.io
 repo_url: https://github.com/Hudater/hudater.github.io
-
 
 # Theme setup
 theme:
@@ -18,12 +65,14 @@ theme:
   custom_dir: overrides
   # custom_dir: overrideslaskjflk
   logo: assets/logo.jpg
+  favicon: assets/favicon.ico
   icon:
     repo: fontawesome/brands/github
   features:
     - navigation.tabs
     - navigation.top
     - navigation.tabs.sticky
+    - content.tabs.link
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -40,10 +89,17 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
   font:
+    # text: "Noto Sans"
+    # code: "Encode Sans Expanded"
     text: "Noto Sans"
-    code: "Encode Sans Expanded"
+    code: "Roboto Mono"
 
-# Required for tags to function
+# Plugins and Md extensions
+plugins:
+  - search
+  - tags:
+      tags_file: extras/tags.md
+
 markdown_extensions:
   - admonition
   - meta
@@ -51,8 +107,13 @@ markdown_extensions:
   - tables
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.highlight
   - pymdownx.inlinehilite
+  - pymdownx.highlight:
+      anchor_linenums: true
+      auto_title: true
+      linenums: true
+      linenums_style: table
+  - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
@@ -60,35 +121,20 @@ markdown_extensions:
       emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.tasklist:
       custom_checkbox: true
-
-plugins:
-  - search
-  - tags:
-      tags_file: misc/tags.md
+  - toc:
+      title: On this page
+      permalink: ⚓︎
+      permalink_title: Anchor link to this section for reference
 
 # Sortable tables
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
 
-# Navigation setup
-nav:
-  - Home: index.md
-  - Media:
-    - Bazarr: media/bazarr.md
-    - Radarr: media/radarr.md
-    - Sonarr: media/sonarr.md
-  - Networking:
-    - Authelia: networking/authelia.md
-    - Traefik: networking/traefik.md
-  - Linux:
-    - Basic: linux/basic.md
-  - Misc:
-    - Tags: misc/tags.md
-
-
 # Footer section
 extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Hudater
+
+copyright: Copyright &copy; 2022 Hudater
