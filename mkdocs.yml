@@ -62,7 +62,7 @@ markdown_extensions:
 plugins:
   - search
   - tags:
-      tags_file: about/tags.md
+      tags_file: misc/tags.md
 
 # Sortable tables
 extra_javascript:
@@ -80,8 +80,8 @@ nav:
     - Architecture: networking/architecture.md
   - Linux:
     - Arch: linux/arch.md
-  - About:
-    - Tags: about/tags.md
+  - Misc:
+    - Tags: misc/tags.md
 
 
 # Footer section
