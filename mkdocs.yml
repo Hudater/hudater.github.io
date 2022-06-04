@@ -3,7 +3,7 @@
 site_name: Hudater Docs
 site_description: Centralized documentation for docker and more...
 site_author: Hudater
-site_url: https://hudater.github.io
+site_url: https://haops.dev/
 edit_uri: edit/main/docs/
 docs_dir: docs
 
