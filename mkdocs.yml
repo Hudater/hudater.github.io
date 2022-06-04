@@ -58,6 +58,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 plugins:
   - search
@@ -73,9 +75,10 @@ extra_javascript:
 nav:
   - Home: index.md
   - Media:
+    - Bazarr: media/bazarr.md
+    - Radarr: media/radarr.md
     - Sonarr:
       - Setup: media/sonarr.md
-    - Radarr: media/radarr.md
   - Networking:
     - Architecture: networking/architecture.md
   - Linux:

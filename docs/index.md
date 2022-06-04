@@ -17,24 +17,27 @@ description: Homepage of this glorious website
 Centralized documentation for my Homelab, OS setup and possibly more.  
 I hope it may be useful to you too!
 
-## Service and Port mapping
-
-These are the services currently running in my lab.
-
-???+ Service and Port mapping "**Docker** - [CLICK TO EXPAND]"
-
-    | :fontawesome-brands-docker: Service Name      | :material-import: Port Number                          |
-    | :-------------------------------------------- | :----------------------------------------------------- |
-    | `GET`                                         | :material-check:     Fetch resource                    |
-    | `PUT`                                         | :material-check-all: Update resource                   |
-    | `DELETE`                                      | :material-close:     Delete resource                   |
-
-??? Service and Port mapping "**Bare Metal** - [CLICK TO EXPAND]"
-
-    Adguard
+## Service Listing
 
 !!! info
 
-    If you’re wondering why hard links aren’t working or why a simple move is taking far longer than it should.
+    Ticked options are the one deployed all the times.
 
-    Here we will try to explain it.
+???+ Docker "**Docker** - [CLICK TO EXPAND]"
+
+    - [x] [Bazarr](media/bazarr.md){:target="_blank" rel="noopener noreferrer"}
+    - [x] [asf](){:target="_blank" rel="noopener noreferrer"}
+        * [x] In hac habitasse platea dictumst
+        * [x] In scelerisque nibh non dolor mollis congue sed et metus
+        * [ ] Praesent sed risus massa
+    - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+
+
+??? Bare "**Bare Metal** - [CLICK TO EXPAND]"
+
+    - [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
+    - [ ] Vestibulum convallis sit amet nisi a tincidunt
+        * [x] In hac habitasse platea dictumst
+        * [x] In scelerisque nibh non dolor mollis congue sed et metus
+        * [ ] Praesent sed risus massa
+    - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
