@@ -27,7 +27,7 @@ I hope it may be useful to you too!
 
     - [x] [Authelia](networking/authelia.md "SSO Auth")
     - [x] [Bazarr](media/bazarr.md "Subtitles for Sonarr and Radarr")
-    - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+    - [x] [Traefik](networking/traefik.md "Reverse Proxy")
 
 
 ??? Bare "**Bare Metal** - [CLICK TO EXPAND]"

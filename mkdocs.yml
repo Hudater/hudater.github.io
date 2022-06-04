@@ -80,6 +80,7 @@ nav:
     - Sonarr: media/sonarr.md
   - Networking:
     - Authelia: networking/authelia.md
+    - Traefik: networking/traefik.md
   - Linux:
     - Arch: linux/arch.md
   - Misc:
