@@ -44,9 +44,9 @@ nav:
     - Rickroll: misc/rickroll.md
     - Snapdrop: misc/snapdrop.md
   - Extras:
-    - Tags: extras/tags.md
-    - Resources: extras/resources.md
     - Credits: extras/credits.md
+    - Tags: extras/tags.md
+
 
 # Metadata
 site_name: Hudater Docs
@@ -62,8 +62,7 @@ repo_url: https://github.com/Hudater/hudater.github.io
 theme:
   name: material
   language: en
-  custom_dir: overrides
-  # custom_dir: overrideslaskjflk
+  # custom_dir: overrides
   logo: assets/logo.jpg
   favicon: assets/logo.jpg
   icon:
@@ -130,6 +129,10 @@ markdown_extensions:
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
   - javascripts/tablesort.js
+
+# For custom admonition
+extra_css:
+  - stylesheets/extra.css
 
 # Footer section
 extra:
