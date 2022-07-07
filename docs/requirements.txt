@@ -1,4 +1,4 @@
-mkdocs-material
-markdown
-mkdocs-pdf-export-plugin
-mkdocs-minify-plugin
+mkdocs-material==8.3.5
+markdown==3.3.6
+mkdocs-pdf-export-plugin==0.5.10
+mkdocs-minify-plugin==0.4.1
