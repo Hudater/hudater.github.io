@@ -13,6 +13,7 @@ nav:
     - qBittorrent: media/qbittorrent.md
     - Radarr: media/radarr.md
     - Requestrr: media/requestrr.md
+    - Snapdrop: media/snapdrop.md
     - Sonarr: media/sonarr.md
   - Networking:
     - Adguard: networking/adguard.md
@@ -20,6 +21,7 @@ nav:
     - Cloudflare Tunnel: networking/cloudflared.md
     - DuckDNS: networking/duckdns.md
     - Librespeed: networking/librespeed.md
+    - Rickroll: networking/rickroll.md
     - Traefik: networking/traefik.md
     - WgEasy: networking/wgeasy.md
   - Status:
@@ -40,9 +42,6 @@ nav:
       - Portainer-Agent: management/portainer-agent.md
     - Code Server: management/vscode.md
     - Watchtower: management/watchtower.md
-  - Misc:
-    - Rickroll: misc/rickroll.md
-    - Snapdrop: misc/snapdrop.md
   - Extras:
     - Credits: extras/credits.md
     - Tags: extras/tags.md
@@ -75,8 +74,8 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: red
-      accent: red
+      primary: brown
+      accent: deep orange
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
@@ -96,8 +95,15 @@ theme:
 # Plugins and Md extensions
 plugins:
   - search
+  - pdf-export
   - tags:
       tags_file: extras/tags.md
+  - minify:
+      minify_html: true
+      minify_js: true
+      minify_css: true
+      htmlmin_opts:
+          remove_comments: true
 
 markdown_extensions:
   - admonition

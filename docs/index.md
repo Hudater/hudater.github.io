@@ -22,7 +22,8 @@ This website grows per my convenience. I hope it may be useful to you too!
 
 !!! info
 
-    Ticked options are the one deployed all the times.
+    This section links services I use in my lab  
+    Ticked options are the one deployed all the times  
 
 ???+ Docker "**Docker** - [CLICK TO EXPAND]"
 
@@ -54,13 +55,49 @@ This website grows per my convenience. I hope it may be useful to you too!
 
 #### Basic info template
 
-!!! base-info "Basic info"
+!!! base-info "Basic info with official links"
 
     - [x] Port: `443`
     - [x] Image: [DockerHub](https://hub.docker.com/u/hudater "PROJECT image on Docker Hub"){:target="_blank" rel="noopener noreferrer"}
     - [x] Repo: [Github](https://github.com/Hudater/hudater.github.io "PROJECTNAME's Github repo"){:target="_blank" rel="noopener noreferrer"}
-    - [x] Website: [HAops.dev](https://www.haops.dev "PROJECTNAME's official website"){:target="_blank" rel="noopener noreferrer"}
+    - [x] Website: [HAops.dev](https://docs.haops.dev "PROJECTNAME's official website"){:target="_blank" rel="noopener noreferrer"}
+
+#### Compose file template
+
+```yaml
+version: "3"
+services:
+  serviceName: #change me
+    image: MAINTAINER/IMAGE:latest #change me
+    container_name: myContainer #change me
+    restart: unless-stopped
+    volumes:
+      - "${CFG_DIR}/containerCfgDir:/config" #change me
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+    ports:
+      - 80:80
+    labels:
+      traefik.enable: true
+      traefik.http.services.portainer.loadbalancer.server.port: portNumber #set specific port for traefik
+    networks:
+      - proxy
+
+networks:
+  proxy:    # rename this to your custom docker network.
+    external: true
+```
+
+#### Deploy.sh file
+
+```bash
+mkdir -p "${CFG_DIR}"/dirName #change me
+docker compose up -d
+```
 
 #### Template for link
 
 - [DisplayName](LINK "HoverText"){:target="_blank" rel="noopener noreferrer"}
+<!-- - []( ""){:target="_blank" rel="noopener noreferrer"} -->

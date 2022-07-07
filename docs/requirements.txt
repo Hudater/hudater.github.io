@@ -1,2 +1,4 @@
 mkdocs-material
 markdown
+mkdocs-pdf-export-plugin
+mkdocs-minify-plugin
