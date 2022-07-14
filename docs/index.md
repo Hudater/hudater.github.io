@@ -53,51 +53,68 @@ This website grows per my convenience. I hope it may be useful to you too!
 
 ## Templates
 
-#### Basic info template
+### Description
+
+Give a basic description of the app here  
+
+### Basic info template
 
 !!! base-info "Basic info with official links"
 
-    - [x] Port: `443`
+    - [x] Port: `80`
     - [x] Image: [DockerHub](https://hub.docker.com/u/hudater "PROJECT image on Docker Hub"){:target="_blank" rel="noopener noreferrer"}
     - [x] Repo: [Github](https://github.com/Hudater/hudater.github.io "PROJECTNAME's Github repo"){:target="_blank" rel="noopener noreferrer"}
-    - [x] Website: [HAops.dev](https://docs.haops.dev "PROJECTNAME's official website"){:target="_blank" rel="noopener noreferrer"}
+    - [x] Website: [docs.HAops.dev](https://docs.haops.dev "PROJECTNAME's official website"){:target="_blank" rel="noopener noreferrer"}
 
-#### Compose file template
+### docker-compose.yml
 
-```yaml
+```yaml title="Basic compose manifest"
 version: "3"
 services:
-  serviceName: #change me
-    image: MAINTAINER/IMAGE:latest #change me
-    container_name: myContainer #change me
+  serviceName:
+    image: MAINTAINER/IMAGE:latest #(1)
+    container_name: myContainer #(2)
     restart: unless-stopped
     volumes:
-      - "${CFG_DIR}/containerCfgDir:/config" #change me
+      - "${CFG_DIR}/containerCfgDir:/config" #(3)
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TZ}
     ports:
-      - 80:80
+      - 80:80 #(4)
+    networks:
+      - proxy #(5)
     labels:
       traefik.enable: true
-      traefik.http.services.portainer.loadbalancer.server.port: portNumber #set specific port for traefik
-    networks:
-      - proxy
+      traefik.http.services.portainer.loadbalancer.server.port: portNumber #(6)
 
 networks:
-  proxy:    # rename this to your custom docker network.
+  proxy: #(7)
     external: true
 ```
 
-#### Deploy.sh file
+1. No tag defaults to `latest`  
+   Best practice is to test your stuff with new image and pin the container to that version
+2. Name the container or docker would name it randomly  
+   Name used by traefik to autogenerate route  
+   i.e, `traefik.example.com`
+3. Refer to [variables guide](/linux/server/#environment-variables)  
+4. Change port number on left side
+5. Same custom docker network as traefik
+6. Specific port for traefik to route traffic from for this container
+7. Specify your custom networks location here
+
+### deploy.sh
 
 ```bash
-mkdir -p "${CFG_DIR}"/dirName #change me
+mkdir -p "${CFG_DIR}"/containerCfgDir #(1)
 docker compose up -d
 ```
 
-#### Template for link
+1. Refer to [variables guide](/linux/server/#environment-variables)  
+
+### Template for link
 
 - [DisplayName](LINK "HoverText"){:target="_blank" rel="noopener noreferrer"}
 <!-- - []( ""){:target="_blank" rel="noopener noreferrer"} -->

@@ -26,7 +26,7 @@ description: Credits and Resources to people and sites I took inspiration from
 - [LinuxServer Fleet](https://fleet.linuxserver.io/ "LinuxServer Fleet"){:target="_blank" rel="noopener noreferrer"}
 - [Shall not be named](https://github.com/Igglybuff/awesome-piracy "Don't go there"){:target="_blank" rel="noopener noreferrer"}
 
-## Boilerplates and Wikis of various users
+## Boilerplates, Blogs and Wikis of other selfhosters
 - [0xn3va's Cheat Sheet](https://0xn3va.gitbook.io/cheat-sheets/ "Great Knowledgebase"){:target="_blank" rel="noopener noreferrer"}
 - [Abhilesh's Collection of compose files](https://github.com/abhilesh/self-hosted_docker_setups "Abhilesh's Collection of compose files"){:target="_blank" rel="noopener noreferrer"}
 - [Arrs Wiki](https://wiki.servarr.com/ "Arrs Wiki"){:target="_blank" rel="noopener noreferrer"}
@@ -36,6 +36,7 @@ description: Credits and Resources to people and sites I took inspiration from
 - [Kenneth's blog](https://blog.thelifeofkenneth.com/ "Kenneth's blog"){:target="_blank" rel="noopener noreferrer"}
 - [LinuxServer Documentaion](https://docs.linuxserver.io/ "LinuxServer.io Documentaion"){:target="_blank" rel="noopener noreferrer"}
 - [Mikeroyal Guides for various tech](https://mikeroyal.github.io/ "Mikeroyal Guides for various tech"){:target="_blank" rel="noopener noreferrer"}
+- [Noted.lol by Jeremy](https://noted.lol/ "Noted.lol by Jeremy"){:target="_blank" rel="noopener noreferrer"}
 - [Perfect Media Server](https://perfectmediaserver.com/index.html "Perfect Media Server"){:target="_blank" rel="noopener noreferrer"}
 - [RPI Guide](https://github.com/mikeroyal/Raspberry-Pi-Guide "RPI Guide"){:target="_blank" rel="noopener noreferrer"}
 - [Selfhosted Show Wiki](https://wiki.selfhosted.show/ "Selfhosted Show Wiki"){:target="_blank" rel="noopener noreferrer"}
@@ -44,6 +45,7 @@ description: Credits and Resources to people and sites I took inspiration from
 - [Techno Tim's Wiki](https://docs.technotim.live/ "Techno Tim's Wiki"){:target="_blank" rel="noopener noreferrer"}
 - [TRaSH's Guides](https://trash-guides.info/ "TRaSH's Guides"){:target="_blank" rel="noopener noreferrer"}
 - [Wise's blog](https://wise.wtf/ "Wise's blog"){:target="_blank" rel="noopener noreferrer"}
+- [Zilexa's Guide to Homeserver](https://github.com/zilexa/Homeserver "Zilexa's Guide to Homeserver"){:target="_blank" rel="noopener noreferrer"}
 
 ## Other Useful Links
 - [Cloud Free Tier Comparison](https://github.com/cloudcommunity/Cloud-Free-Tier-Comparison "Cloud Free Tier Comparison"){:target="_blank" rel="noopener noreferrer"}

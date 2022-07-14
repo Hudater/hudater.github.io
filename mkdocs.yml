@@ -4,6 +4,7 @@ nav:
   - Home: index.md
   - Linux:
     - Basic: linux/basic.md
+    - Server: linux/server.md
   - Media:
     - Bazarr: media/bazarr.md
     - Flaresolverr: media/flaresolverr.md
@@ -67,22 +68,25 @@ theme:
   icon:
     repo: fontawesome/brands/github
   features:
+    - header.autohide
     - navigation.tabs
     - navigation.top
-    - navigation.tabs.sticky
+    # - navigation.tabs.sticky
     - content.tabs.link
+    - search.share
+    - content.code.annotate
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: brown
-      accent: deep orange
+      primary: light blue
+      accent: light blue
       toggle:
         icon: material/toggle-switch
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: light blue
-      accent: light blue
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to light mode
@@ -95,7 +99,7 @@ theme:
 # Plugins and Md extensions
 plugins:
   - search
-  - pdf-export
+  - pdf-export #LATER
   - tags:
       tags_file: extras/tags.md
   - minify:
