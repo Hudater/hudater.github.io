@@ -1,8 +1,4 @@
 mkdocs-material==8.3.9
 markdown==3.3.7
 mkdocs-pdf-export-plugin==0.5.10
-<<<<<<< HEAD
-mkdocs-minify-plugin==0.4.1
-=======
 mkdocs-minify-plugin==0.5.0
->>>>>>> 36ec8e5256c9bb29f2a9ccaffcf19e43eb5e5b87
