@@ -17,3 +17,5 @@ sudo chmod 755 /home/$USER/GitIt -R
 sudo chmod 700 /home/$USER/GitIt/SyncFiles/dotsPr/ssh/.ssh
 sudo chmod 600 /home/$USER/GitIt/SyncFiles/dotsPr/ssh/.ssh/*
 ```
+
+# fstab

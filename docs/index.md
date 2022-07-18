@@ -27,18 +27,17 @@ This website grows per my convenience. I hope it may be useful to you too!
 
 ???+ Docker "**Docker** - [CLICK TO EXPAND]"
 
-    - [x] [Authelia](networking/authelia.md "SSO Auth")
-    - [x] [Bazarr](media/bazarr.md "Subtitles for Sonarr and Radarr")
-    - [x] [Traefik](networking/traefik.md "Reverse Proxy")
+    - [x] [Authelia](networking/authelia "SSO Auth")
+    - [x] [Bazarr](media/bazarr "Subtitles for Sonarr and Radarr")
+    - [x] [Filebrowser](filesv/filebrowser "Web based file browser")
+    - [ ] [Syncthing](filesv/syncthing/#docker "File sync")
+    - [x] [Traefik](networking/traefik "Reverse Proxy")
 
 ??? Bare "**Bare Metal** - [CLICK TO EXPAND]"
 
-    - [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
-    - [ ] Vestibulum convallis sit amet nisi a tincidunt
-        * [x] In hac habitasse platea dictumst
-        * [x] In scelerisque nibh non dolor mollis congue sed et metus
-        * [ ] Praesent sed risus massa
-    - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+    - [x] [OliveTin](management/olivetin "Command runner")
+    - [x] [Samba](filesv/samba "File sharing")
+    - [x] [Syncthing](filesv/syncthing/#bare-metal "File sync")
 
 
 ## Miscellaneous
@@ -50,6 +49,7 @@ This website grows per my convenience. I hope it may be useful to you too!
 ???+ Linux "**Linux** - [CLICK TO EXPAND]"
 
     - [x] [Basic Linux](linux/basic.md "Basic setup for Linux post-install")
+    - [x] [Server](linux/server.md "Setup for linux servers")
 
 ## Templates
 
@@ -99,7 +99,7 @@ networks:
 2. Name the container or docker would name it randomly  
    Name used by traefik to autogenerate route  
    i.e, `traefik.example.com`
-3. Refer to [variables guide](/linux/server/#environment-variables)  
+3. Refer to [variables guide](/linux/server/#environment-variables)
 4. Change port number on left side
 5. Same custom docker network as traefik
 6. Specific port for traefik to route traffic from for this container

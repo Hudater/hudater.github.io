@@ -1,5 +1,6 @@
 ---
 tags:
+  - Docker
   - Fileserver
   - Files
   - Sharing
@@ -12,7 +13,7 @@ Filebrowser is Web based file manager with basic auth, command runner, built-in 
 
 !!! note
 
-    This service is deployed on multiple machines. Non-primary config files are in drop-down
+    This service is deployed on multiple machines
 
 ### Basic info
 
