@@ -36,7 +36,7 @@ This website grows per my convenience. I hope it may be useful to you too!
     - [ ] Management
         - [x] [OliveTin](management/olivetin "Command runner")
 
-???+ Docker "Docker - [CLICK TO EXPAND]"
+??? Docker "Docker - [CLICK TO EXPAND]"
 
     - [ ] Media
         - [x] [Bazarr](media/bazarr "Subtitles for Sonarr and Radarr")
