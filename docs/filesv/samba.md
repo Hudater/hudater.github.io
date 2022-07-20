@@ -3,9 +3,6 @@ tags:
   - Bare Metal
   - Fileserver
   - Files
-  - Samba
-  - SMB
-  - CIFS
 title: Samba
 description: File sharing via SMB/CIFS protocol
 ---
@@ -16,6 +13,8 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
 !!! note
 
     This service is deployed on multiple machines
+
+## Bare Metal
 
 ### Basic info
 

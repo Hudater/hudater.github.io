@@ -2,13 +2,15 @@
 tags:
   - Bare Metal
   - Management
-  - Olivetin
   - Command Runner
 title: Olivetin
 description: Web based command runner for pre-configured commands
 ---
+## Description
 
-# Olivetin
+OliveTin gives safe and simple access to predefined shell commands from a web interface.
+
+## Bare Metal
 
 ## Basic info
 
@@ -109,7 +111,7 @@ actions:
 
 ### Prerequisite
 
-#### SSH setup:
+#### SSH setup
 
 - [x] Copy ssh directory to root user's home direrctory
   ```bash

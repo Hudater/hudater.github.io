@@ -14,7 +14,6 @@ nav:
     - qBittorrent: media/qbittorrent.md
     - Radarr: media/radarr.md
     - Requestrr: media/requestrr.md
-    - Snapdrop: media/snapdrop.md
     - Sonarr: media/sonarr.md
   - Networking:
     - Adguard: networking/adguard.md

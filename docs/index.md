@@ -25,20 +25,50 @@ This website grows per my convenience. I hope it may be useful to you too!
     This section links services I use in my lab  
     Ticked options are the one deployed all the times  
 
-???+ Docker "**Docker** - [CLICK TO EXPAND]"
+???+ Bare "Bare Metal"
 
-    - [x] [Authelia](networking/authelia "SSO Auth")
-    - [x] [Bazarr](media/bazarr "Subtitles for Sonarr and Radarr")
-    - [x] [Filebrowser](filesv/filebrowser "Web based file browser")
-    - [ ] [Syncthing](filesv/syncthing/#docker "File sync")
-    - [x] [Traefik](networking/traefik "Reverse Proxy")
+    - [ ] Networking
+        - [x] [Adguard](networking/adguard "DNS Server with Ad-blocking")
+        - [x] [Cloudflare Tunnel](networking/cloudflared "Private tunnel to Cloudflare")
+    - [ ] Fileserver
+        - [x] [Samba](filesv/samba "SMB File sharing")
+        - [x] [Syncthing](filesv/syncthing/#bare-metal "File sync")
+    - [ ] Management
+        - [x] [OliveTin](management/olivetin "Command runner")
 
-??? Bare "**Bare Metal** - [CLICK TO EXPAND]"
+???+ Docker "Docker - [CLICK TO EXPAND]"
 
-    - [x] [OliveTin](management/olivetin "Command runner")
-    - [x] [Samba](filesv/samba "File sharing")
-    - [x] [Syncthing](filesv/syncthing/#bare-metal "File sync")
-
+    - [ ] Media
+        - [x] [Bazarr](media/bazarr "Subtitles for Sonarr and Radarr")
+        - [x] [Flaresolverr](media/flaresolverr "Bypass Cloudflare Protection")
+        - [x] [Jellyfin](media/jellyfin "Media Server")
+        - [x] [Jellyseerr](media/jellyseerr "Media Requester with GUI")
+        - [x] [Prowlarr](media/prowlarr "Indexer")
+        - [x] [qBittorrent](media/qbittorrent "Torrent Client")
+        - [x] [Radarr](media/radarr "Movie Management")
+        - [x] [Requestrr](media/requestrr.md "Media Request Chatbot")
+        - [x] [Sonarr](media/sonarr "TV Show Management")
+    - [ ] Networking
+        - [x] [Authelia](networking/authelia "SSO Auth")
+        - [x] [DuckDNS](networking/duckdns "Free DDNS")
+        - [x] [Librespeed](networking/librespeed "FOSS Speedtest")
+        - [x] [Rickroll](networking/rickroll "Yes")
+        - [x] [Traefik](networking/traefik "Reverse Proxy")
+        - [x] [WgEasy](networking/wgeasy "Wireguard server with GUI")
+    - [ ] Status
+        - [x] [Dozzle](status/dozzle "Docker Log manager")
+        - [x] [Heimdall](status/heimdall "GUI driven Dashboard")
+        - [x] [Homarr](status/homarr "*arr Integrated Dashboard")
+        - [x] [Homer](status/homer "Static Dashboard")
+        - [x] [Scrutiny](status/scrutiny "Disk monitoring")
+        - [x] [Uptime Kuma](status/uptime-kuma "Uptime Monitoring and Alert")
+    - [ ] Fileserver
+        - [x] [Filebrowser](filesv/filebrowser "Web based file browser")
+        - [ ] [Syncthing](filesv/syncthing/#docker "File sync")
+    - [ ] Management
+        - [x] [Portainer-CE](management/portainer-ce "Docker Manager")
+        - [x] [Portainer-Agent](management/portainer-agent "Docker Manager Endpoint")
+        - [x] [Watchtower](management/watchtower "Update Docker Containers")
 
 ## Miscellaneous
 
@@ -46,7 +76,7 @@ This website grows per my convenience. I hope it may be useful to you too!
 
     This section links Linux docs, dotfiles etc
 
-???+ Linux "**Linux** - [CLICK TO EXPAND]"
+???+ Linux "Linux"
 
     - [x] [Basic Linux](linux/basic.md "Basic setup for Linux post-install")
     - [x] [Server](linux/server.md "Setup for linux servers")
@@ -57,12 +87,13 @@ This website grows per my convenience. I hope it may be useful to you too!
 
 Give a basic description of the app here  
 
-### Basic info template
+### Basic info
 
 !!! base-info "Basic info with official links"
 
-    - [x] Port: `80`
-    - [x] Image: [DockerHub](https://hub.docker.com/u/hudater "PROJECT image on Docker Hub"){:target="_blank" rel="noopener noreferrer"}
+    - [x] Web-GUI Port: `80`
+    - [x] Other Ports: `443`
+    - [x] Image: [DockerHub](https://hub.docker.com/r/hudater "PROJECT image on Docker Hub"){:target="_blank" rel="noopener noreferrer"}
     - [x] Repo: [Github](https://github.com/Hudater/hudater.github.io "PROJECTNAME's Github repo"){:target="_blank" rel="noopener noreferrer"}
     - [x] Website: [docs.HAops.dev](https://docs.haops.dev "PROJECTNAME's official website"){:target="_blank" rel="noopener noreferrer"}
 

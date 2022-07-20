@@ -1,16 +1,67 @@
 ---
 tags:
+  - Docker
   - Media
+title: Sonarr
+description: TV Show Manager
 ---
+### Description
 
-## Test
+Sonarr is a TV Show collection manager for Usenet and BitTorrent users  
+It basically automatically downloads, renames and manages your TV Shows while respecting your custom settings
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ultricies elit sapien, ac vehicula dui porttitor molestie. Duis vehicula ultricies eros sit amet interdum. Vestibulum cursus pharetra nisi id vestibulum. Integer sem leo, dictum sit amet odio vitae, ornare semper magna. Phasellus lacus ligula, posuere et nunc sed, viverra varius risus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed tortor ipsum, ultrices quis aliquam et, pellentesque eget sapien. Nulla erat nisi, blandit vitae quam sit amet, condimentum malesuada magna. Praesent at sapien ac diam sodales feugiat in in felis. Nunc pulvinar arcu massa, nec imperdiet erat iaculis ac. Ut laoreet sem odio, in pharetra magna congue a. Vivamus semper quam eros, et elementum mi cursus tincidunt. Ut et mi ut sapien efficitur dignissim. Suspendisse eget volutpat tortor.
+!!! warning
+    This guide utilises Hardlinks  
+    Refer to [Trash's Guide](https://trash-guides.info/Hardlinks/Hardlinks-and-Instant-Moves/ "Trash-Guides"){:target="_blank" rel="noopener noreferrer"} for elaborate description
 
-Cras gravida finibus sollicitudin. Vivamus non suscipit tortor. Aliquam erat volutpat. Vivamus at sapien lacus. Nam ut ex elit. Phasellus eu ligula id ante faucibus sagittis. Etiam faucibus est sed ultrices maximus. Cras egestas, felis vel gravida vestibulum, dui justo vehicula nisl, sed lobortis tellus diam id purus. Curabitur nisl metus, varius in felis quis, consequat dapibus est. Morbi vulputate ut nisl sed cursus. Sed ut risus libero. Aenean tincidunt arcu at lorem vehicula venenatis. Curabitur interdum porttitor nisl, sit amet cursus arcu tempor id. Ut ut magna sed augue ultricies lacinia. Nunc auctor urna sit amet luctus posuere.
+!!! note
+    For extended guide, refer to [TRaSH-Guides](https://trash-guides.info/Sonarr/ "Trash-Guides"){:target="_blank" rel="noopener noreferrer"}
 
+## Docker
 
-### Test2
+### Basic info
 
-Praesent tempus erat sit amet risus rhoncus vestibulum. Mauris consectetur est augue, accumsan condimentum elit luctus a. In rhoncus metus sit amet erat condimentum eleifend. Mauris et odio sem. Sed eu posuere enim, mollis facilisis mi. Vestibulum aliquam ex sapien, at sollicitudin metus accumsan in. Praesent eu sem turpis. Quisque posuere hendrerit diam, ut gravida libero faucibus eu.
+!!! base-info "Basic info with official links"
 
+    - [x] Web-GUI Port: `8989`
+    - [x] Image: [DockerHub](https://hub.docker.com/r/linuxserver/sonarr "Sonarr image on Docker Hub"){:target="_blank" rel="noopener noreferrer"}
+    - [x] Repo: [Github](https://github.com/Sonarr/Sonarr "Sonarr Github repo"){:target="_blank" rel="noopener noreferrer"}
+    - [x] Website: [Sonarr Docs](https://wiki.servarr.com/sonarr "Sonarr official Docs"){:target="_blank" rel="noopener noreferrer"}
+
+### docker-compose.yml
+
+```yaml
+---
+version: "2.1"
+services:
+  sonarr:
+    image: linuxserver/sonarr:latest
+    container_name: sonarr
+    networks:
+      - proxy # rename this to your custom docker network
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
+      - DOCKER_MODS=ghcr.io/gilbn/theme.park:sonarr
+      - TP_THEME=organizr
+    volumes:
+      - ${CFG_DIR}/sonarr:/config
+      - ${BAK_CFG_DIR}/sonarr:/config/Backups
+      - ${DATA_DIR}:/data
+    ports:
+      - 8989:8989
+    restart: unless-stopped
+
+networks:
+  proxy:    # rename this to your custom docker network.
+    external: true
+```
+
+### deploy.sh
+
+```bash
+mkdir -p "${CFG_DIR}"/sonarr
+mkdir -p "${BAK_CFG_DIR}"/sonarr
+docker compose up -d
+```

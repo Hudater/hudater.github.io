@@ -5,7 +5,6 @@ tags:
   - Fileserver
   - Files
   - Sync
-  - Syncthing
 title: Syncthing
 description: File syncing for multiple devices
 ---
@@ -62,7 +61,8 @@ Syncthing is a continuous file synchronization program. Synchronizes files betwe
 
 !!! base-info "Basic info with official links"
 
-    - [x] Port: `8384`
+    - [x] Web-GUI Port: `8384`
+    - [x] Other Ports: `22000` `21027`
     - [x] Image: [DockerHub](https://hub.docker.com/r/linuxserver/syncthing "Syncthing image on Docker Hub"){:target="_blank" rel="noopener noreferrer"}
     - [x] Repo: [Github](https://github.com/syncthing/syncthing "Syncthing's Github repo"){:target="_blank" rel="noopener noreferrer"}
     - [x] Website: [Syncthing.net](https://syncthing.net/ "Syncthing's official website"){:target="_blank" rel="noopener noreferrer"}
