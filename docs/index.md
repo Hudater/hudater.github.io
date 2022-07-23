@@ -36,7 +36,7 @@ This website grows per my convenience. I hope it may be useful to you too!
     - [ ] Management
         - [x] [OliveTin](management/olivetin "Command runner")
 
-??? Docker "Docker - [CLICK TO EXPAND]"
+???+ Docker "Docker - [CLICK TO EXPAND]"
 
     - [ ] Media
         - [x] [Bazarr](media/bazarr "Subtitles for Sonarr and Radarr")
@@ -50,18 +50,19 @@ This website grows per my convenience. I hope it may be useful to you too!
         - [x] [Sonarr](media/sonarr "TV Show Management")
     - [ ] Networking
         - [x] [Authelia](networking/authelia "SSO Auth")
+        - [x] [Cloudflare-DDNS](networking/cloudflare-ddns "DDNS for Cloudflare")
         - [x] [DuckDNS](networking/duckdns "Free DDNS")
         - [x] [Librespeed](networking/librespeed "FOSS Speedtest")
         - [x] [Rickroll](networking/rickroll "Yes")
         - [x] [Traefik](networking/traefik "Reverse Proxy")
         - [x] [WgEasy](networking/wgeasy "Wireguard server with GUI")
-    - [ ] Status
-        - [x] [Dozzle](status/dozzle "Docker Log manager")
-        - [x] [Heimdall](status/heimdall "GUI driven Dashboard")
-        - [x] [Homarr](status/homarr "*arr Integrated Dashboard")
-        - [x] [Homer](status/homer "Static Dashboard")
-        - [x] [Scrutiny](status/scrutiny "Disk monitoring")
-        - [x] [Uptime Kuma](status/uptime-kuma "Uptime Monitoring and Alert")
+    - [ ] Monitoring
+        - [x] [Dozzle](monitoring/dozzle "Docker Log manager")
+        - [x] [Heimdall](monitoring/heimdall "GUI driven Dashboard")
+        - [x] [Homarr](monitoring/homarr "*arr Integrated Dashboard")
+        - [x] [Homer](monitoring/homer "Static Dashboard")
+        - [x] [Scrutiny](monitoring/scrutiny "Disk monitoring")
+        - [x] [Uptime Kuma](monitoring/uptime-kuma "Uptime Monitoring and Alert")
     - [ ] Fileserver
         - [x] [Filebrowser](filesv/filebrowser "Web based file browser")
         - [ ] [Syncthing](filesv/syncthing/#docker "File sync")

@@ -18,19 +18,20 @@ nav:
   - Networking:
     - Adguard: networking/adguard.md
     - Authelia: networking/authelia.md
+    - Cloudflare DDNS: networking/cloudflare-ddns.md
     - Cloudflare Tunnel: networking/cloudflared.md
     - DuckDNS: networking/duckdns.md
     - Librespeed: networking/librespeed.md
     - Rickroll: networking/rickroll.md
     - Traefik: networking/traefik.md
     - WgEasy: networking/wgeasy.md
-  - Status:
-    - Dozzle: status/dozzle.md
-    - Heimdall: status/heimdall.md
-    - Homarr: status/homarr.md
-    - Homer: status/homer.md
-    - Scrutiny: status/scrutiny.md
-    - Uptime Kuma: status/uptime-kuma.md
+  - Monitoring:
+    - Dozzle: monitoring/dozzle.md
+    - Heimdall: monitoring/heimdall.md
+    - Homarr: monitoring/homarr.md
+    - Homer: monitoring/homer.md
+    - Scrutiny: monitoring/scrutiny.md
+    - Uptime Kuma: monitoring/uptime-kuma.md
   - Fileserver:
     - Filebrowser: filesv/filebrowser.md
     - Samba: filesv/samba.md

@@ -66,7 +66,7 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
       browsable = yes
     ```
 
-=== "Pi4"
+=== "Pi"
 
     ```
     [global]

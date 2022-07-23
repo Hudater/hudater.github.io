@@ -96,6 +96,9 @@ DNS Server with Ad-blocking just like Pi-hole
 
 ### Batch Blocklist Script
 
+!!! todo
+  Look into [letsblockit](https://github.com/letsblockit/letsblockit)
+
 ```python title="batch_adlist.py"
 ## credit: https://www.reddit.com/user/carzian/
 from requests.adapters import HTTPAdapter
