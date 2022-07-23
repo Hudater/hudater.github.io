@@ -30,13 +30,14 @@ This website grows per my convenience. I hope it may be useful to you too!
     - [ ] Networking
         - [x] [Adguard](networking/adguard "DNS Server with Ad-blocking")
         - [x] [Cloudflare Tunnel](networking/cloudflared "Private tunnel to Cloudflare")
+        - [x] [Shadowsocks](networking/shadowsocks "Tunnel Proxy")
     - [ ] Fileserver
         - [x] [Samba](filesv/samba "SMB File sharing")
         - [x] [Syncthing](filesv/syncthing/#bare-metal "File sync")
     - [ ] Management
         - [x] [OliveTin](management/olivetin "Command runner")
 
-???+ Docker "Docker - [CLICK TO EXPAND]"
+??? Docker "Docker - [CLICK TO EXPAND]"
 
     - [ ] Media
         - [x] [Bazarr](media/bazarr "Subtitles for Sonarr and Radarr")
