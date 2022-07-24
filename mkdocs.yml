@@ -23,7 +23,7 @@ nav:
     - DuckDNS: networking/duckdns.md
     - Librespeed: networking/librespeed.md
     - Rickroll: networking/rickroll.md
-    - Shadowsockcs: networking/shadowsocks.md
+    - Shadowsocks: networking/shadowsocks.md
     - Traefik: networking/traefik.md
     - WgEasy: networking/wgeasy.md
   - Monitoring:
