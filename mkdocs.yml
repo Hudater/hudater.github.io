@@ -100,7 +100,7 @@ theme:
 # Plugins and Md extensions
 plugins:
   - search
-  # - pdf-export #LATER
+  - pdf-export #LATER
   - tags:
       tags_file: extras/tags.md
   - minify:
