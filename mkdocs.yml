@@ -53,7 +53,7 @@ nav:
 site_name: Hudater Docs
 site_description: Centralized documentation for docker and more...
 site_author: Hudater
-site_url: https://www.haops.dev/
+site_url: https://docs.haops.dev/
 edit_uri: edit/main/docs/
 docs_dir: docs
 repo_name: Hudater/hudater.github.io
@@ -100,7 +100,7 @@ theme:
 # Plugins and Md extensions
 plugins:
   - search
-  - pdf-export #LATER
+  # - pdf-export #LATER
   - tags:
       tags_file: extras/tags.md
   - minify:

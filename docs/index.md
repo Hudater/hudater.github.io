@@ -141,11 +141,14 @@ networks:
 ### deploy.sh
 
 ```bash
-mkdir -p "${CFG_DIR}"/containerCfgDir #(1)
+#!/bin/sh
+mkdir -p ${CFG_DIR}/containerCfgDir #(1)
+mkdir -p ${CFG_DIR}/containerCfgDir/{multiple,subdirs} #(2)
 docker compose up -d
 ```
 
 1. Refer to [variables guide](/linux/server/#environment-variables)  
+2. Use braces for variables and subdirectory names. No quotes  
 
 ### Template for link
 

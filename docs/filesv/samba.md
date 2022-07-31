@@ -26,6 +26,10 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
 
 ### smb.conf
 
+!!! warning
+    Change interface name in `interfaces` of `[global]` section  
+    Run `ip a` to find your ethernet port name
+
 === "Acer"
 
     ```
@@ -37,7 +41,8 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
       server role = standalone server
       log file = /usr/local/samba/var/log.%m
       max log size = 50
-      dns proxy = no
+      bind interfaces only = yes
+      interfaces = 127.0.0.0/8 lo enp1s0
 
     [acerroot]
       comment = Sharing root over samba for authed users
@@ -77,6 +82,8 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
       server role = standalone server
       log file = /usr/local/samba/var/log.%m
       max log size = 50
+      bind interfaces only = yes
+      interfaces = 127.0.0.0/8 lo eth0
 
     [pist]
       comment = Sharing SSD Stoage over samba for all users
