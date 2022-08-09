@@ -25,11 +25,14 @@ This website grows per my convenience. I hope it may be useful to you too!
     This section links services I use in my lab  
     Ticked options are the one deployed all the times  
 
+!!! warning
+    For latest configs and compose files, visit my [Github](https://github.com/Hudater "Github Hudater"){:target="_blank" rel="noopener noreferrer"}
+
 ???+ Bare "Bare Metal"
 
     - [ ] Networking
         - [x] [Adguard](networking/adguard "DNS Server with Ad-blocking")
-        - [x] [Cloudflare Tunnel](networking/cloudflared "Private tunnel to Cloudflare")
+        - [ ] [Cloudflare Tunnel](networking/cloudflared/#bare-metal "Private tunnel to Cloudflare")
         - [x] [Shadowsocks](networking/shadowsocks "Tunnel Proxy")
     - [ ] Fileserver
         - [x] [Samba](filesv/samba "SMB File sharing")
@@ -52,6 +55,7 @@ This website grows per my convenience. I hope it may be useful to you too!
     - [ ] Networking
         - [x] [Authelia](networking/authelia "SSO Auth")
         - [x] [Cloudflare-DDNS](networking/cloudflare-ddns "DDNS for Cloudflare")
+        - [x] [Cloudflare Tunnel](networking/cloudflared/#docker "Private tunnel to Cloudflare")
         - [x] [DuckDNS](networking/duckdns "Free DDNS")
         - [x] [Librespeed](networking/librespeed "FOSS Speedtest")
         - [x] [Rickroll](networking/rickroll "Yes")
@@ -81,6 +85,7 @@ This website grows per my convenience. I hope it may be useful to you too!
 ???+ Linux "Linux"
 
     - [x] [Basic Linux](linux/basic.md "Basic setup for Linux post-install")
+    - [x] [Desktop](linux/desktop.md "Setup for Desktop Linux")
     - [x] [Server](linux/server.md "Setup for linux servers")
 
 ## Templates
@@ -102,6 +107,7 @@ Give a basic description of the app here
 ### docker-compose.yml
 
 ```yaml title="Basic compose manifest"
+---
 version: "3"
 services:
   serviceName:

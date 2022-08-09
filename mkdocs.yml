@@ -4,6 +4,7 @@ nav:
   - Home: index.md
   - Linux:
     - Basic: linux/basic.md
+    - Desktop: linux/desktop.md
     - Server: linux/server.md
   - Media:
     - Bazarr: media/bazarr.md

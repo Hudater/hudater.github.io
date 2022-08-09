@@ -1,6 +1,7 @@
 ---
 tags:
   - Bare Metal
+  - Docker
   - Networking
 title: Cloudflare Tunnel
 description: Cloudflare Tunnel
@@ -10,8 +11,10 @@ description: Cloudflare Tunnel
 Cloudflare Tunnel provides you with a secure way to connect your resources to Cloudflare without a publicly routable IP address
 
 !!! todo
-    Create a script to update cloudflared  
-    Look into docker deployment by crazymax
+    Create a script to update cloudflared
+
+!!! note
+    Deploy using Docker since auto-updation and management is easier that way
 
 ## Bare Metal
 
@@ -266,3 +269,77 @@ Cloudflare Tunnel provides you with a secure way to connect your resources to Cl
       originRequest:
         originServerName: optional-subdomain.enter-your-domain.com #examples: example.com, home.example.com, *.example.com
   ```
+
+
+
+
+
+## Docker
+
+### Basic info
+
+!!! base-info "Basic info with official links"
+
+    - [x] Image: [DockerHub](https://hub.docker.com/r/erisamoe/cloudflared "Cloudflared image on Docker Hub"){:target="_blank" rel="noopener noreferrer"}
+    - [x] Repo: [Github](https://github.com/Erisa/cloudflared-docker "Cloudflared's Github repo"){:target="_blank" rel="noopener noreferrer"}
+    - [x] Website: [Docs for config setup](https://github.com/Erisa/cloudflared-docker#config-file-setup-named-tunnel "Docs for config setup"){:target="_blank" rel="noopener noreferrer"}
+
+### Prerequisite
+
+- [x] Run these commands to get a `cert.pem` and `UUID.json` file
+
+- [x] Retrieving necessary files
+
+    ```bash title="Get cert.pem file"
+    docker run -v $PWD/cloudflared:/.cloudflared erisamoe/cloudflared login
+    ```
+
+    ```bash title="Get UUID.json file"
+    docker run -v $PWD/cloudflared:/etc/cloudflared erisamoe/cloudflared tunnel create traefikHome
+    ```
+
+- [x] Config.yml setup
+```bash title="config.yml"
+tunnel: TUNNEL-UUID-HERE
+credentials-file: /etc/cloudflared/PATH-TO-TUNNEL-UUID.json
+ingress:
+  - service: https://192.168.29.10:443 #your traefik's https entrypoint
+    originRequest:
+      originServerName: DOMAIN.com #root of your domain
+```
+
+- [x] Cloudflare DNS Setup
+
+    | TYPE    | NAME | CONETENT              |
+    | --------| -----| ----------------------|
+    | `CNAME` | @    | UUID.cfargotunnel.com |
+    | `CNAME` | *    | @                     |
+
+### docker compose.yml
+
+```yaml
+---
+services:
+  cloudflared:
+    image: erisamoe/cloudflared:latest
+    restart: unless-stopped
+    container_name: cloudflared
+    command: tunnel run traefikHome
+    depends_on:
+      - mycontainer
+    volumes:
+      - "${BAK_CFG_DIR}/cloudflared:/etc/cloudflared"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
+```
+
+### deploy.sh
+
+```bash
+#!/bin/sh
+docker compose up -d
+```
