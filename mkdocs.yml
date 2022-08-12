@@ -5,6 +5,7 @@ nav:
   - Linux:
     - Basic: linux/basic.md
     - Desktop: linux/desktop.md
+    - Docker: linux/docker.md
     - Server: linux/server.md
   - Media:
     - Bazarr: media/bazarr.md

@@ -168,4 +168,4 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
         ```
 
 !!! info
-    To mount smb share, refer to [fstab guide](/linux/basic/#fstab)
+    To mount smb share, refer to [fstab guide](/linux/desktop/#fstab)
