@@ -47,7 +47,8 @@ nav:
     - Code Server: management/vscode.md
     - Watchtower: management/watchtower.md
   - Extras:
-    - Credits: extras/credits.md
+    - Templates: extras/templates.md
+    - Resources: extras/resources.md
     - Tags: extras/tags.md
 
 

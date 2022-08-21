@@ -8,12 +8,12 @@ description: Setup for server running Linux
 ---
 This page would define additional setup for Server instances
 
-!!! note
-    These steps are to be performed on Server installations
+!!! info
+    Run these using your standard user with sudo if required  
 
 ## Package Manager
-### Basic Setup
 
+### Basic Setup
 === "Debian/Ubuntu"
 
     - [x] Install Nala to replace apt:
@@ -39,14 +39,13 @@ This page would define additional setup for Server instances
     [Official Guide by Fedora](https://docs.fedoraproject.org/en-US/quick-docs/setup_rpmfusion/#proc_enabling-the-rpmfusion-repositories-using-command-line-utilities_enabling-the-rpmfusion-repositories){:target="_blank" rel="noopener noreferrer"}
 
 ### Install basic packages
-
 ```bash
 sudo nala install ffmpeg git htop linux-generic nano ncdu neofetch neovim pv rsync stow tldr traceroute unrar unzip tar vim wget curl zsh
 ```
 
 ## Kernel Parameters
-### GRUB bootloader
 
+### GRUB bootloader
 - [x] TODO
 ```bash title="sudoedit /boot/fileToAdd.conf"
 TODO

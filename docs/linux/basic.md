@@ -7,12 +7,69 @@ description: Basic setup for Linux for both Desktop and Server
 ---
 This page would define setup of basic installation with my bare minimum to get further the installation to either a server or desktop usecase
 
+!!! info
+    Run these using your standard user with sudo if required  
+
+## User Setup
+
+### Create user
+```bash title="UID and GID is 1000"
+sudo useradd -m -u 1000 -G sudo,plugdev,video,adm userName
+```
+
+### Change Username with home and group
+```bash title="Change Usernames accordingly"
+usermod -l newUserName -d /home/newUserName -m oldUserName
+groupmod -n newUserName oldUserName
+```
+
+## Basic config files
+
+### etc files
+#### Hosts
+
+#### Hostname
+#### Locale.conf
+#### Locale.gen
+
+### Sudo setup
+- [x] Edit sudoers file
+```bash title="sudo EDITOR=nvim visudo"
+Defaults        insults
+Defaults        env_reset,timestamp_timeout=60
+%wheel ALL=(ALL) ALL
+ALL ALL=NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
+```
+
 !!! note
-    These steps are to be performed on all Linux installations
+    If reboot etc don't work without password then move `@includedir /etc/sudoers.d` line to top
+
+## DNS
+
+### systemd-resolved
+
+### resolv.conf
+!!! todo
+    Figure out resolv.conf file
+
+## NTP
+
+- [x] Symlink `/etc/localtime`
+```bash
+ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+```
+- [x] Enable timesync service
+```bash
+sudo systemctl enable systemd-timesyncd.service --now
+```
+- [ ] Check status
+```bash
+timedatectl
+```
 
 ## Shell
-### Sh symlink
 
+### Sh symlink
 === "Ubuntu"
     Already comes with sh pointing to dash
 
@@ -23,7 +80,6 @@ This page would define setup of basic installation with my bare minimum to get f
     ```
 
 ### User Shell to ZSH
-
 - [x] To change shell to zsh
 ```bash title="Run as user whose shell you want to change, NOT ROOT OR SUDO"
 chsh -s $(which zsh)
@@ -34,8 +90,8 @@ chsh -s $(which zsh)
     Happened to me on Pi-Zero
 
 ## SSH
-### Fix SSH permissions after stow
 
+### Fix SSH permissions after stow
 ```bash
 sudo chmod 755 /home/$USER && \
 sudo chmod 755 /home/$USER/GitIt -R && \
@@ -50,22 +106,9 @@ If SELinux is enforcing, allow SSH policy
 restorecon -R -v /home/$USER/.ssh
 ```
 
-## Sudo setup
-
-- [x] Edit sudoers file
-```bash title="sudo EDITOR=nvim visudo"
-Defaults        insults
-Defaults        env_reset,timestamp_timeout=60
-%wheel ALL=(ALL) ALL
-ALL ALL=NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
-```
-
-!!! note
-    If reboot etc don't work without password then move `@includedir /etc/sudoers.d` line to top
-
 ## Zram-Swap and Swappiness
-### Installation
 
+### Installation
 === "Arch"
 
     - [x] Install directly from AUR
@@ -103,7 +146,6 @@ ALL ALL=NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
     ```
 
 ### Swappiness value
-
 - [x] Create and edit `swappiness.conf` file
 ```bash title="sudoedit /etc/sysctl.d/99-swappiness.conf"
 vm.swappiness=10

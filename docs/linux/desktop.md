@@ -8,12 +8,12 @@ description: Setup for desktop running Linux
 ---
 This page would define additional setup for Desktop instances
 
-!!! note
-    These steps are to be performed on Desktop installations
+!!! info
+    Run these using your standard user with sudo if required  
 
 ## rEFInd Bootloader
-### Kernel Parameters
 
+### Kernel Parameters
 - [x] Edit refind.conf with desired kernel parameter
 ```bash title="sudoedit /boot/refind_linux.conf"
 "Boot with minimal options"   "ro root=PARTUUID=b61a3a3d-c9e6-1048-8c73-61bce9ebe201 amdgpu.ppfeaturemask=0xfffd7fff ipv6.disable=1"
@@ -23,9 +23,10 @@ This page would define additional setup for Desktop instances
     Above config adds amdgpu option for overclocking via `corectrl` etc and disables IPv6
 
 ## Fonts
+!!! todo
+    Find out required fonts and add them to git repo
 
 ## FStab
-
 !!! warning
     FStab is mounted serial-wise, so lookout for depending mounts
 
@@ -50,8 +51,8 @@ sudo chown $USER:$USER /lab -R
 ```
 
 ## Package Manager
-### Basic Setup
 
+### Basic Setup
 === "Arch"
 
     - [x] Edit pacman config
@@ -96,3 +97,5 @@ sudo chown $USER:$USER /lab -R
     ```
 
 ### Install basic packages
+!!! todo
+    Find basic packages for Arch and AwesomeWM

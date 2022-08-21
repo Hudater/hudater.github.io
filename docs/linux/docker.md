@@ -10,7 +10,8 @@ description: Setup for Docker on Linux
 ---
 This page would define installation, uninstallation and user setup for Docker
 
-
+!!! info
+    Run these using your standard user with sudo if required  
 
 
 ## Docker
