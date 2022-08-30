@@ -84,7 +84,10 @@ This website grows per my convenience. I hope it may be useful to you too!
 
 ???+ Linux "Linux"
 
-    - [x] [Basic Linux](linux/basic.md "Basic setup for Linux post-install")
-    - [x] [Desktop](linux/desktop.md "Setup for Desktop Linux")
-    - [x] [Docker](linux/docker.md "Docker setup for Linux post-install")
-    - [x] [Server](linux/server.md "Setup for linux servers")
+    - [ ] Installation Guides
+        - [x] [Arch Linux](linux/arch/ "Arch installation guide")
+        - [x] [Docker](linux/docker.md "Docker setup for Linux post-install")
+    - [ ] Setup Guides
+        - [x] [Basic](linux/basic.md "Basic setup for Linux post-install")
+        - [x] [Desktop](linux/desktop.md "Setup for Desktop Linux")
+        - [x] [Server](linux/server.md "Setup for linux servers")

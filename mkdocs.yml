@@ -5,10 +5,11 @@ nav:
   - Linux:
     - Installation Guides:
       - Arch Linux: linux/arch.md
-    - Basic: linux/basic.md
-    - Desktop: linux/desktop.md
-    - Docker: linux/docker.md
-    - Server: linux/server.md
+      - Docker: linux/docker.md
+    - Setup Guides:
+      - Basic: linux/basic.md
+      - Desktop: linux/desktop.md
+      - Server: linux/server.md
   - Media:
     - Bazarr: media/bazarr.md
     - Flaresolverr: media/flaresolverr.md
@@ -75,6 +76,7 @@ theme:
     repo: fontawesome/brands/github
   features:
     - header.autohide
+    - navigation.expand
     - navigation.tabs
     - navigation.top
     # - navigation.tabs.sticky
