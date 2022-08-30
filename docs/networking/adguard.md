@@ -9,8 +9,14 @@ description: DNS Server with Ad-blocking
 
 DNS Server with Ad-blocking just like Pi-hole
 
-!!! note
-    Currently using Bare-metal deployment since it occasionally misbehaved on docker
+!!! warning
+    Modify `dhcpcd.conf` AFTER adguard installation
+```bash title="sudoedit /etc/dhcpcd.conf"
+static domain_name_servers=192.168.29.12 #(1)
+```
+
+1. Put it at the end of the file  
+Change IP to LAN IP of Adguard server
 
 ## Global Settings for Adguard
 

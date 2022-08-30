@@ -10,47 +10,91 @@ This page would define setup of basic installation with my bare minimum to get f
 !!! info
     Run these using your standard user with sudo if required  
 
-## User Setup
-
-### Create user
-```bash title="UID and GID is 1000"
-sudo useradd -m -u 1000 -G sudo,plugdev,video,adm userName
+## DotFiles
+### Create Useful Directories
+```bash
+mkdir -pv ~/Bench/Mount ~/GitIt/SyncFiles ~/info
+```
+```bash title="Extra one for Desktop"
+mkdir -pv ~/GitIt/Wallpapers-PC
 ```
 
-### Change Username with home and group
-```bash title="Change Usernames accordingly"
-usermod -l newUserName -d /home/newUserName -m oldUserName
-groupmod -n newUserName oldUserName
+### Syncthing
+- [x] Install [Syncthing](/filesv/syncthing/)
+- [x] Sync `~/GitIt/SyncFiles` folder with following ignore patterns
+```bash
+.git
+dotsPr/ssh/.ssh/known_hosts
+dotsPr/ssh/.ssh/known_hosts.old
+db
+configBak/authelia
+configBak/authelia-cloud
+configBak/fenrus
 ```
+- [x] Sync `PC-Walls` with Desktops
 
-## Basic config files
+### Symlink dotfiles
+#### dots
+=== "Acer"
+    ```bash title="cd ~/GitIt/SyncFiles/dots"
+    stow -vt ~ acerMisc/ bpytop/ htop/ neofetch/ nvim/ templates/ vim/ zsh/
+    ```
 
-### etc files
-#### Hosts
+=== "PC"
+    ```bash title="cd ~/GitIt/SyncFiles/dots"
+    stow -vt ~ alacritty/ awesome/ bpytop/ compton/ htop/ kitty/ neofetch/ nitrogen/ nvim/ pcMisc/ pcVol/ rofi/ templates/ theming/ vim/ zsh/
+    ```
 
-#### Hostname
-#### Locale.conf
-#### Locale.gen
+=== "Pi"
+    ```bash title="cd ~/GitIt/SyncFiles/dots"
+    stow -vt ~ bpytop/ htop/ neofetch/ nvim/ templates/ piMisc/ vim/ zsh/
+    ```
 
-### Sudo setup
-- [x] Edit sudoers file
-```bash title="sudo EDITOR=nvim visudo"
-Defaults        insults
-Defaults        env_reset,timestamp_timeout=60
-%wheel ALL=(ALL) ALL
-ALL ALL=NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
-```
 
-!!! note
-    If reboot etc don't work without password then move `@includedir /etc/sudoers.d` line to top
+#### dotsPr
+=== "Acer"
+    ```bash title="cd ~/GitIt/SyncFiles/dotsPr"
+    stow -vt ~ acerHome/ env/ extras/ git/ ssh/
+    ```
+
+=== "PC"
+    ```bash title="cd ~/GitIt/SyncFiles/dotsPr"
+    stow -vt ~ env/ extras/ git/ pcHome/ redshift/ ssh/
+    ```
+
+=== "Pi"
+    ```bash title="cd ~/GitIt/SyncFiles/dotsPr"
+    stow -vt ~ env/ git/ extras/ piHome/ ssh/
+    ```
+
+### Vim Plug
+- [x] Install Plug
+=== "Vim"
+    ```bash title="vim"
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ```
+=== "NeoVim"
+    ```bash title="nvim"
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    ```
+
+- [x] Install Plugins specified in config files
+=== "Vim"
+    - [x] Open `vim`
+    - [x] Enter command mode by typing ++escape+colon++ 
+    - [x] Type `PlugInstall` and hit ++enter++
+=== "NeoVim"
+    - [x] Open `nvim`
+    - [x] Enter command mode by typing ++escape+colon++ 
+    - [x] Type `PlugInstall` and hit ++enter++
 
 ## DNS
-
 ### systemd-resolved
-
-### resolv.conf
-!!! todo
-    Figure out resolv.conf file
+```bash
+sudo systemctl enable systemd-resolved.service --now
+```
 
 ## NTP
 
@@ -68,29 +112,37 @@ timedatectl
 ```
 
 ## Shell
-
 ### Sh symlink
-=== "Ubuntu"
-    Already comes with sh pointing to dash
-
 === "Arch"
     Install `dashbinsh` from AUR
     ```bash
-    yay -S dashbinsh
+    paru -S dashbinsh --noconfirm
     ```
 
+=== "Ubuntu"
+    Already comes with sh pointing to dash
+
+### Starship Prompt
+=== "Arch"
+    ```bash
+    sudo pacman -S starship --noconfirm
+    ```
+
+=== "Ubuntu"
+    ```bash
+    curl -sS https://starship.rs/install.sh | sh
+    ```
 ### User Shell to ZSH
 - [x] To change shell to zsh
 ```bash title="Run as user whose shell you want to change, NOT ROOT OR SUDO"
 chsh -s $(which zsh)
 ```
 
-!!! note
+!!! tip
     If you're using bash and your bashrc won't load, [read this](https://stackoverflow.com/questions/18393521/bashrc-not-loading-until-run-bash-command/18393620#18393620){:target="_blank" rel="noopener noreferrer"}  
     Happened to me on Pi-Zero
 
 ## SSH
-
 ### Fix SSH permissions after stow
 ```bash
 sudo chmod 755 /home/$USER && \
@@ -113,12 +165,12 @@ restorecon -R -v /home/$USER/.ssh
 
     - [x] Install directly from AUR
     ```bash
-    yay -S zram-swap-git
+    paru -S zram-swap-git --noconfirm
     ```
 
     - [x] Start and Enable service
     ```bash
-    sudo systemctl enable --now zramd.service
+    sudo systemctl enable --now zram-swap.service
     ```
 
 === "Ubuntu"
@@ -127,12 +179,12 @@ restorecon -R -v /home/$USER/.ssh
 
         === "x86_64"
             ```bash
-            sudo nala install linux-generic
+            sudo nala install linux-generic -y
             ```
 
         === "rpi4"
             ```bash
-            sudo nala install linux-modules-extra-raspi
+            sudo nala install linux-modules-extra-raspi -y
             ```
 
     - [x] Clone `zram-swap` repo
@@ -146,16 +198,33 @@ restorecon -R -v /home/$USER/.ssh
     ```
 
 ### Swappiness value
-- [x] Create and edit `swappiness.conf` file
-```bash title="sudoedit /etc/sysctl.d/99-swappiness.conf"
-vm.swappiness=10
-```
-- [x] Restart OS
 ```bash
-sudo reboot
+sudo tee -a /etc/sysctl.d/99-swappiness.conf > /dev/null <<EOT
+vm.swappiness=10
+EOT
 ```
 
-- [x] Check swappiness value
-```bash
-sysctl vm.swappiness
+## Sudo setup as your root user
+```bash title="EDITOR=nvim visudo"
+@includedir /etc/sudoers.d #(1)
+Defaults        insults
+Defaults        env_reset,timestamp_timeout=60 #(2)
+%wheel ALL=(ALL) ALL #(3)
+ALL ALL=NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
+```
+
+1. Move this line to top for passwordless commands to work
+2. This CAN BE a security risk. Not suggested to use
+3. Change `wheel` group to `sudo` if required
+
+## User Setup
+### Create user
+```bash title="UID and GID is 1000"
+sudo useradd -m -u 1000 -G sudo,plugdev,video,adm userName
+```
+
+### Change Username with home and group
+```bash title="Change Usernames accordingly"
+usermod -l newUserName -d /home/newUserName -m oldUserName
+groupmod -n newUserName oldUserName
 ```

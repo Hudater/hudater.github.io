@@ -78,7 +78,7 @@ networks:
 2. Name the container or docker would name it randomly  
    Name used by traefik to autogenerate route  
    i.e, `traefik.example.com`
-3. Refer to [variables guide](/linux/server/#environment-variables)
+3. Refer to [variables guide](/linux/docker/#environment-variables)
 4. Change port number on left side
 5. Same custom docker network as traefik
 6. Specific port for traefik to route traffic from for this container

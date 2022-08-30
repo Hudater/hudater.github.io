@@ -11,6 +11,7 @@ description: Credits and Resources to people and sites I took inspiration from
 
 ## For this website
 - [Mkdocs Material](https://squidfunk.github.io/mkdocs-material/ "Mkdocs with material theme"){:target="_blank" rel="noopener noreferrer"}
+- [Python Markdown Docs](https://facelessuser.github.io/pymdown-extensions/ "Documentation for python md extensions"){:target="_blank" rel="noopener noreferrer"}
 - [DIUN](https://crazymax.dev/diun/ "For color scheme"){:target="_blank" rel="noopener noreferrer"}
 - [Shields on Homepage](https://shields.io/ "Shields for basic info"){:target="_blank" rel="noopener noreferrer"}
 - [TRaSH Guides](https://trash-guides.info/ "For admonitions"){:target="_blank" rel="noopener noreferrer"}
@@ -38,6 +39,7 @@ description: Credits and Resources to people and sites I took inspiration from
 - [Mikeroyal Guides for various tech](https://mikeroyal.github.io/ "Mikeroyal Guides for various tech"){:target="_blank" rel="noopener noreferrer"}
 - [Noted.lol by Jeremy](https://noted.lol/ "Noted.lol by Jeremy"){:target="_blank" rel="noopener noreferrer"}
 - [Perfect Media Server](https://perfectmediaserver.com/index.html "Perfect Media Server"){:target="_blank" rel="noopener noreferrer"}
+- [Pi-Hole documentation](https://docs.pi-hole.net/ "Pi-Hole Docs"){:target="_blank" rel="noopener noreferrer"}
 - [RPI Guide](https://github.com/mikeroyal/Raspberry-Pi-Guide "RPI Guide"){:target="_blank" rel="noopener noreferrer"}
 - [Selfhosted Show Wiki](https://wiki.selfhosted.show/ "Selfhosted Show Wiki"){:target="_blank" rel="noopener noreferrer"}
 - [Smarthome Beginner Guide](https://www.smarthomebeginner.com/traefik-2-docker-tutorial/ "Smarthome Beginner Guide"){:target="_blank" rel="noopener noreferrer"}
