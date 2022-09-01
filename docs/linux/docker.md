@@ -3,8 +3,8 @@ tags:
   - Linux
   - Setup
   - Server
-  - Docker
   - Desktop
+  - Installation
 title: Docker Setup on Linux
 description: Setup for Docker on Linux
 ---

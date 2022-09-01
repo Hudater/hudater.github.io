@@ -2,7 +2,6 @@
 tags:
   - Linux
   - Installation
-  - Arch
 title: Arch Installation
 description: Guide for my personaly arch install
 ---
@@ -191,7 +190,7 @@ lsblk
     Add or remove programs as you like
 
 ```bash
-pacstrap -i base base-devel linux-zen linux-zen-headers linux-firmware vim git stow openssh mtools dosfstools networkmanager network-manager-applet wireless_tools wpa_supplicant dialog
+pacstrap -i /mnt base base-devel linux-zen linux-zen-headers linux-firmware vim git stow openssh mtools dosfstools networkmanager network-manager-applet wireless_tools wpa_supplicant dialog
 ```
 
 ### Generate FSTab
@@ -274,31 +273,75 @@ mkrlconf
 "Boot with minimal options" "ro root=PARTUUID=32768bfc-d092-224b-b36e-0b415dcf40c5"
 ```
 
+### Pacman
+
+- [x] Edit pacman config
+```bash
+vim /etc/pacman.conf
+```
+
+- [x] Enable Parallel Downloads and Colors
+```bash
+Color
+ILoveCandy
+ParallelDownloads = 5
+```
+
+- [x] Enable Multilib support
+```bash
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+```
+
+- [ ] Fix mirrors with `reflector`
+```bash title="Install reflector first"
+sudo reflector --latest 50 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+### Users and Sudo
+- [x] Set root password
+```bash
+passwd root
+```
+
+- [x] Create standard user
+```bash
+useradd -m -u 1000 -G wheel userName
+```
+
+- [x] Password for standard user
+```bash
+passwd userName
+```
+
+- [x] Edit sudoers file
+
+```bash title="EDITOR=vim visudo"
+@includedir /etc/sudoers.d #(1)
+Defaults        insults
+Defaults        env_reset,timestamp_timeout=60 #(2)
+%wheel ALL=(ALL) ALL
+ALL ALL=NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
+```
+
+1. Move this line to top for passwordless commands to work
+2. This CAN BE a security risk. Not suggested to use
+
+### Services
+<!-- TODO -->
+systemd-timesyncd
+sshd
+Network-Manager
+sudo nmtui wifi
+!!! success
+    Basic Arch installation is complete here. Reboot now to your new installation
+
+## Post Installation
+
+!!! warning
+    Install `chaotic-aur` after enabling [NTP](/linux/basic/#ntp)
+
 ### Package Manager
-=== "Pacman"
-    - [x] Edit pacman config
-    ```bash
-    vim /etc/pacman.conf
-    ```
-
-    - [x] Enable Parallel Downloads and Colors
-    ```bash
-    Color
-    ILoveCandy
-    ParallelDownloads = 5
-    ```
-
-    - [x] Enable Multilib support
-    ```bash
-    [multilib]
-    Include = /etc/pacman.d/mirrorlist
-    ```
-
-    - [ ] Fix mirrors with `reflector`
-    ```bash title="Install reflector first"
-    sudo reflector --latest 50 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
-    ```
-
 === "Chaotic-AUR"
 
     !!! warning
@@ -334,40 +377,6 @@ mkrlconf
     SudoLoop
     ```
 
-### Users and Sudo
-- [x] Set root password
-```bash
-passwd root
-```
-
-- [x] Create standard user
-```bash
-sudo useradd -m -u 1000 -G wheel userName
-```
-
-- [x] Password for standard user
-```bash
-passwd userName
-```
-
-- [x] Edit sudoers file
-
-```bash title="EDITOR=nvim visudo"
-@includedir /etc/sudoers.d #(1)
-Defaults        insults
-Defaults        env_reset,timestamp_timeout=60 #(2)
-%wheel ALL=(ALL) ALL
-ALL ALL=NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
-```
-
-1. Move this line to top for passwordless commands to work
-2. This CAN BE a security risk. Not suggested to use
-
-!!! success
-    Basic Arch installation is complete here. Reboot now to your new installation
-
-## Post Installation
-
 ### Packages
 #### Basic packages
 ```bash
@@ -383,16 +392,9 @@ paru -Sy pipewire pipewire-pulse pavucontrol wireplumber --noconfirm
 paru -Sy xf86-video-amdgpu lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-mesa-driver lib32-libva-mesa-driver vulkan-icd-loader lib32-vulkan-icd-loader --noconfirm
 ```
 
-### Launch Desktop Session
-
-- [x] Create `.xinitrc` with your DE or Window Manager
+##### Intel
 ```bash
-echo "exec awesome" >> ~/.xinitrc
-```
-
-- [x] Launch into your Desktop
-```bash
-startx
+paru -Sy mesa lib32-mesa xf86-video-intel --noconfirm
 ```
 
 !!! success

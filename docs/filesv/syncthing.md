@@ -39,14 +39,19 @@ Syncthing is a continuous file synchronization program. Synchronizes files betwe
     === "Debian/Ubuntu"
         [Official Syncthing Guide](https://apt.syncthing.net/ "Official Syncthing Guide"){:target="_blank" rel="noopener noreferrer" .md-button .md-button--primary}
 
+- [x] Start and Enable syncthing service
+```bash
+sudo systemctl enable --now syncthing@$USER.service
+```
+
 - [x] Allow Web-GUI to be accesible to all addresses:
     ```bash
     sed -i 's/127.0.0.1:8384/0.0.0.0:8384/' ~/.config/syncthing/config.xml
     ```
 
-- [x] Start and Enable syncthing service
+- [x] Restart Syncthing service
 ```bash
-sudo systemctl enable --now syncthing@$USER.service
+sudo systemctl restart syncthing@$USER.service
 ```
 
 - [ ] Allow syncthing through firewall

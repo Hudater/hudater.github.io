@@ -59,16 +59,48 @@ sudo chown $USER:$USER /lab -R
 sudo mount -a
 ```
 
-## rEFInd Bootloader
-### Kernel Parameters
-- [x] Edit refind.conf with desired kernel parameter
-```bash title="sudoedit /boot/refind_linux.conf"
-"Boot with minimal options"   "ro root=PARTUUID=b61a3a3d-c9e6-1048-8c73-61bce9ebe201 amdgpu.ppfeaturemask=0xfffd7fff ipv6.disable=1"
+## Screenshot
+- [x] Install `scrot`
+```bash
+paru -S scrot
+```
+- [x] Make `Pictures` directory
+```bash
+mkdir -pv ~/Pictures
 ```
 
-!!! note
-    Above config adds amdgpu option for overclocking via `corectrl` etc and disables IPv6  
-    Add or remove modules as your wish
+## rEFInd Bootloader
+### AMD Ucode
+- [x] Install `amd-ucode`
+```bash
+paru -S amd-ucode
+```
+- [x] Add kernel and ucode to end of boot parameters
+
+```bash
+initrd=\initramfs-linux-zen.img #(1)
+initrd=\amd-ucode.img #(2)
+```
+
+1. Secify kernel initram from `/boot`
+2. CPU Microcode from `/boot`
+
+### Kernel Parameters
+- [x] Edit refind.conf with desired kernel parameter
+
+```bash title="sudoedit /boot/refind_linux.conf"
+amdgpu.ppfeaturemask=0xfffd7fff #(1)
+ipv6.disable=1 #(2)
+```
+
+1. Enable extra controls over GPU for overclocking
+2. Disables IPv6
+
+!!! tip
+    Final `refind_linux.conf` for me look like  
+    ```bash
+    "Boot with minimal options"   "ro root=PARTUUID=32768bfc-d092-224b-b36e-0b415dcf40c5 amdgpu.ppfeaturemask=0xfffd7fff ipv6.disable=1 initrd=\initramfs-linux-zen.img initrd=\amd-ucode.img"
+    ```
 
 ### Theme
 - [x] CD into `Bench` directory

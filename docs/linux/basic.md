@@ -15,8 +15,8 @@ This page would define setup of basic installation with my bare minimum to get f
 ```bash
 mkdir -pv ~/Bench/Mount ~/GitIt/SyncFiles ~/info
 ```
-```bash title="Extra one for Desktop"
-mkdir -pv ~/GitIt/Wallpapers-PC
+```bash title="Extra for Desktop"
+mkdir -pv ~/GitIt/Wallpapers-PC ~/Downloads
 ```
 
 ### Syncthing
@@ -132,6 +132,7 @@ timedatectl
     ```bash
     curl -sS https://starship.rs/install.sh | sh
     ```
+
 ### User Shell to ZSH
 - [x] To change shell to zsh
 ```bash title="Run as user whose shell you want to change, NOT ROOT OR SUDO"
@@ -141,22 +142,6 @@ chsh -s $(which zsh)
 !!! tip
     If you're using bash and your bashrc won't load, [read this](https://stackoverflow.com/questions/18393521/bashrc-not-loading-until-run-bash-command/18393620#18393620){:target="_blank" rel="noopener noreferrer"}  
     Happened to me on Pi-Zero
-
-## SSH
-### Fix SSH permissions after stow
-```bash
-sudo chmod 755 /home/$USER && \
-sudo chmod 755 /home/$USER/GitIt -R && \
-sudo chmod 700 /home/$USER/GitIt/SyncFiles/dotsPr/ssh/.ssh && \
-sudo chmod 600 /home/$USER/GitIt/SyncFiles/dotsPr/ssh/.ssh/*
-```
-
-### SELinux
-
-If SELinux is enforcing, allow SSH policy
-```bash
-restorecon -R -v /home/$USER/.ssh
-```
 
 ## Zram-Swap and Swappiness
 
@@ -202,6 +187,22 @@ restorecon -R -v /home/$USER/.ssh
 sudo tee -a /etc/sysctl.d/99-swappiness.conf > /dev/null <<EOT
 vm.swappiness=10
 EOT
+```
+
+## SSH
+### Fix SSH permissions after stow
+```bash
+sudo chmod 755 /home/$USER && \
+sudo chmod 755 /home/$USER/GitIt -R && \
+sudo chmod 700 /home/$USER/GitIt/SyncFiles/dotsPr/ssh/.ssh && \
+sudo chmod 600 /home/$USER/GitIt/SyncFiles/dotsPr/ssh/.ssh/*
+```
+
+### SELinux
+
+If SELinux is enforcing, allow SSH policy
+```bash
+restorecon -R -v /home/$USER/.ssh
 ```
 
 ## Sudo setup as your root user
