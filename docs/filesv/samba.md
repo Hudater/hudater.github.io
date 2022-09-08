@@ -30,45 +30,44 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
     Change interface name in `interfaces` of `[global]` section  
     Run `ip a` to find your ethernet port name
 
-=== "Acer"
+=== "Media Server"
 
     ```
-    [global]
-      workgroup = WORKGROUP
-      min protocol = SMB2
-      client min protocol = SMB2
-      server string = Arnux SMB
-      server role = standalone server
-      log file = /usr/local/samba/var/log.%m
-      max log size = 50
-      bind interfaces only = yes
-      interfaces = 127.0.0.0/8 lo enp1s0
+[global]
+  workgroup = WORKGROUP
+  min protocol = SMB2
+  client min protocol = SMB2
+  server string = Media SMB
+  server role = standalone server
+  log file = /usr/local/samba/var/log.%m
+  max log size = 50
+  dns proxy = no
 
-    [acerroot]
-      comment = Sharing root over samba for authed users
-      path = /
-      force user = yourUserName
-      force group = yourUserName
-      create mask = 0664
-      force create mode = 0664
-      directory mask = 0775
-      force directory mode = 0775
-      public = no
-      writable = yes
-      browsable = yes
+[mdroot]
+  comment = Sharing root over samba for authed users
+  path = /
+  force user = putin
+  force group = putin
+  create mask = 0664
+  force create mode = 0664
+  directory mask = 0775
+  force directory mode = 0775
+  public = no
+  writable = yes
+  browsable = yes
 
-    [acerst]
-      comment = Sharing MergerFS Folder publicly with no read-write
-      path = /mnt
-      force user = yourUserName
-      force group = yourUserName
-      create mask = 0664
-      force create mode = 0664
-      directory mask = 0775
-      force directory mode = 0775
-      public = yes
-      writable = no
-      browsable = yes
+[mdmnt]
+  comment = Sharing MergerFS Folder publicly with no read-write
+  path = /mnt
+  force user = putin
+  force group = putin
+  create mask = 0664
+  force create mode = 0664
+  directory mask = 0775
+  force directory mode = 0775
+  public = yes
+  writable = no
+  browsable = yes
     ```
 
 === "Pi"
@@ -128,7 +127,7 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
 
 - [x] Copy smb config
 
-    === "Acer"
+    === "Media Server"
         ```bash
         sudo cp /home/$USER/GitIt/SyncFiles/configBak/samba/acer/acer.smb.conf /etc/samba/smb.conf
         ```
@@ -140,7 +139,7 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
 
 - [x] Set smb password for user
     ```bash
-    sudo smbpasswd -a yourUserName
+    sudo smbpasswd -a $USER
     ```
 
 - [x] Start and enable smb

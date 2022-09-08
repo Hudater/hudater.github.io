@@ -36,7 +36,7 @@ sudo fc-cache -f -v
 
 - [x] Create mount folders with correct persmissions
 ```bash
-sudo mkdir -pv /lab/{acerroot,piroot} &&\
+sudo mkdir -pv /lab/{mdroot,piroot} &&\
 sudo chown $USER:$USER /lab -R
 ```
 
@@ -45,9 +45,9 @@ sudo chown $USER:$USER /lab -R
 ##########################SMB#############################
 #
 #
-###Acer laptop smb server mount
+###Media server smb server mount
 #
-//acer.lan/acerroot  /lab/acerroot  cifs username=USER,password=smbPassword,uid=1000,gid=1000,workgroup=workgroup  0 2
+//media.lan/mdroot  /lab/mdroot  cifs username=USER,password=smbPassword,uid=1000,gid=1000,workgroup=workgroup  0 2
 #
 ##rpi4 smb server mount
 #

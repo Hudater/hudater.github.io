@@ -35,9 +35,9 @@ configBak/fenrus
 
 ### Symlink dotfiles
 #### dots
-=== "Acer"
+=== "Media Server"
     ```bash title="cd ~/GitIt/SyncFiles/dots"
-    stow -vt ~ acerMisc/ bpytop/ htop/ neofetch/ nvim/ templates/ vim/ zsh/
+    stow -vt ~ debSvMisc/ bpytop/ htop/ neofetch/ nvim/ templates/ vim/ zsh/
     ```
 
 === "PC"
@@ -52,9 +52,9 @@ configBak/fenrus
 
 
 #### dotsPr
-=== "Acer"
+=== "Media Server"
     ```bash title="cd ~/GitIt/SyncFiles/dotsPr"
-    stow -vt ~ acerHome/ env/ extras/ git/ ssh/
+    stow -vt ~ debSvHome/ env/ extras/ git/ ssh/
     ```
 
 === "PC"
@@ -119,7 +119,7 @@ timedatectl
     paru -S dashbinsh --noconfirm
     ```
 
-=== "Ubuntu"
+=== "Debian/Ubuntu"
     Already comes with sh pointing to dash
 
 ### Starship Prompt
@@ -128,7 +128,7 @@ timedatectl
     sudo pacman -S starship --noconfirm
     ```
 
-=== "Ubuntu"
+=== "Debian/Ubuntu"
     ```bash
     curl -sS https://starship.rs/install.sh | sh
     ```
@@ -180,6 +180,13 @@ chsh -s $(which zsh)
     - [x] Install from repo's script
     ```bash
     cd zram-swap && sudo ./install.sh
+    ```
+
+    - [x] Remove `/swapfile` and `fstab`
+    ```bash
+    sudo swapoff /swap.img
+    sudo vim /etc/fstab and remove swapfile #TODO sed it
+    sudo rm /swap.img
     ```
 
 ### Swappiness value

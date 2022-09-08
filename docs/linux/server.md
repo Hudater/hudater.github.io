@@ -40,13 +40,24 @@ This page would define additional setup for Server instances
 
 ### Install basic packages
 ```bash
-sudo nala install ffmpeg git htop linux-generic nano ncdu neofetch neovim pv rsync stow tldr traceroute unrar unzip tar vim wget curl zsh
+sudo nala install bat curl exa ffmpeg git htop linux-generic mergerfs nano ncdu neofetch neovim pv rsync samba stow tldr traceroute unzip tar vim wget youtube-dl zsh
 ```
 
-## Kernel Parameters
+## Samba
+### Create directories
+```bash
+mkdir -pv /drives
+/drives/Media Seagate Nvme
+chown /drives /mnt
+```
 
+### Mergerfs
+
+### Samba setup
+
+## Kernel Parameters
 ### GRUB bootloader
 - [x] TODO
 ```bash title="sudoedit /boot/fileToAdd.conf"
-TODO
+https://askubuntu.com/questions/19486/how-do-i-add-a-kernel-boot-parameter
 ```

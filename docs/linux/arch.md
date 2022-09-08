@@ -332,7 +332,7 @@ ALL ALL=NOPASSWD: /sbin/poweroff,/sbin/reboot,/sbin/shutdown
 systemd-timesyncd
 sshd
 Network-Manager
-sudo nmtui wifi
+
 !!! success
     Basic Arch installation is complete here. Reboot now to your new installation
 
@@ -340,6 +340,10 @@ sudo nmtui wifi
 
 !!! warning
     Install `chaotic-aur` after enabling [NTP](/linux/basic/#ntp)
+
+### Wifi
+<!-- TODO -->
+sudo nmtui wifi
 
 ### Package Manager
 === "Chaotic-AUR"
@@ -380,7 +384,7 @@ sudo nmtui wifi
 ### Packages
 #### Basic packages
 ```bash
-paru -Sy absolutely-proprietary alacritty android-file-transfer android-tools anydesk-bin arandr authy awesome bat bpytop brave-bin chromium corectrl cpufetch-git curl dashbinsh dialog discord dosfstools drawio-desktop-bin duf exa feh firefox ffmpeg gimp git go gparted htop imwheel iperf3 kitty libreoffice-still lshw lxappearance-gtk3 mpv mtools nano nautilus nautilus-copy-path ncdu neofetch neovim network-manager-applet networkmanager nfs-utils nitrogen nmap noto-fonts noto-fonts-emoji noto-fonts-extra ntfs-3g numlockx nvtop openbsd-netcat openssh otf-font-awesome picom-ibhagwan-git python-pip qt5-styleplugins qt5ct radeontop redshift reflector rofi rpi-imager-bin rsync samba scrot sshfs starship stow sxiv syncthing tldr traceroute ttf-font-awesome ttf-ms-fonts unrar unzip ventoy-bin vi vim volumeicon vscodium-bin vscodium-bin-marketplace wget wireless_tools woeusb wol wpa_supplicant xclip xorg xorg-xinit xterm youtube-dl zathura zathura-pdf-mupdf zsh --noconfirm
+paru -Sy absolutely-proprietary alacritty android-file-transfer android-tools anydesk-bin arandr authy awesome bat bpytop brave-bin chromium corectrl cpufetch-git curl dialog discord dosfstools drawio-desktop-bin duf exa feh firefox ffmpeg gimp git go gparted htop imwheel iperf3 kitty libreoffice-still lshw lxappearance-gtk3 mpv mtools nano nautilus nautilus-copy-path ncdu neofetch neovim network-manager-applet networkmanager nfs-utils nitrogen nmap noto-fonts noto-fonts-emoji noto-fonts-extra ntfs-3g numlockx nvtop openbsd-netcat openssh otf-font-awesome picom-ibhagwan-git python-pip qt5-styleplugins qt5ct radeontop redshift reflector rofi rpi-imager-bin rsync samba scrot sshfs starship stow sxiv syncthing tldr traceroute ttf-font-awesome ttf-ms-fonts unrar unzip ventoy-bin vi vim volumeicon vscodium-bin vscodium-bin-marketplace wget wireless_tools woeusb wol wpa_supplicant xclip xorg xorg-xinit xterm youtube-dl zathura zathura-pdf-mupdf zsh --noconfirm
 ```
 #### Audio Packages
 ```bash
@@ -394,7 +398,7 @@ paru -Sy xf86-video-amdgpu lib32-mesa vulkan-radeon lib32-vulkan-radeon libva-me
 
 ##### Intel
 ```bash
-paru -Sy mesa lib32-mesa xf86-video-intel --noconfirm
+paru -Sy mesa lib32-mesa --noconfirm
 ```
 
 !!! success

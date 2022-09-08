@@ -49,7 +49,7 @@ This page would define installation, uninstallation and user setup for Docker
     paru -Rns docker docker-compose --noconfirm
     ```
 
-=== "Debian/Ubuntu"
+=== "Ubuntu"
 
     - [x] Install pre-requisite packages
     ```bash
@@ -71,6 +71,56 @@ This page would define installation, uninstallation and user setup for Docker
     ```bash
     echo \
     "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+    $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    ```
+
+    - [x] Finally, Install docker engine
+    ```bash
+    sudo apt-get update &&\
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+    ```
+
+    - [x] Add User to Docker group
+    ```bash
+    sudo usermod -aG docker $USER
+    ```
+
+    - [x] Enable and Run docker service
+    ```bash
+    sudo systemctl enable --now docker.service
+    ```
+
+    !!! warning
+        Log out and log back in to make sure everything works fine
+
+    #### Uninstallation
+
+    ```bash
+    sudo apt-get remove docker docker-engine docker.io containerd runc
+    ```
+
+=== "Debian"
+
+    - [x] Install pre-requisite packages
+    ```bash
+    sudo apt-get update &&\
+    sudo apt-get install \
+        ca-certificates \
+        curl \
+        gnupg \
+        lsb-release
+    ```
+
+    - [x] GPG Key
+    ```bash
+    sudo mkdir -p /etc/apt/keyrings &&\
+    curl -fsSL https://download.docker.com/linux/debian/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    ```
+
+    - [x] Add Repo URL to apt sources
+    ```bash
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/debian \
     $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     ```
 
@@ -123,12 +173,7 @@ echo $CFG_DIR
 
 ### Docker Network
 
-- [x] Create custom docker network for all all containers
+- [x] Create custom docker network for all containers and Databases
 ```bash
-docker network create proxy
-```
-
-- [x] Another network for databases
-```bash
-docker network create dbs
+docker network create proxy dbs
 ```
