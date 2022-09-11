@@ -196,6 +196,30 @@ vm.swappiness=10
 EOT
 ```
 
+## Mkdocs Material
+- [x] Install `python` and `pip`
+
+    === "Arch"
+        ```bash
+        sudo pacman -Sy python python-pip --noconfirm
+        ```
+
+    === "Debian/Ubuntu"
+        ```bash
+        sudo apt update && sudo apt install python3 python3-pip -y
+        ```
+
+- [x] CD into mkdocs folder
+    ```bash
+    cd ~/GitIt/SyncFiles/hudater.github.io/docs
+    ```
+
+- [x] Install requirements from file
+    ```bash
+    pip3 install -r requirements.txt
+    ```
+
+# Not necessary but might be useful
 ## SSH
 ### Fix SSH permissions after stow
 ```bash

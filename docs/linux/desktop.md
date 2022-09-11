@@ -32,9 +32,43 @@ sudo fc-cache -f -v
 ## FStab
 !!! warning
     FStab is mounted serial-wise, so lookout for depending mounts  
-    Install `samba` package before further changes
+    Mount `ROOT` and `BOOT` before any other mounts
 
-- [x] Create mount folders with correct persmissions
+### Local Storage
+- [x] Create `/storage` directory with correct permissions
+```bash
+sudo mkdir -pv /storage &&\
+sudo chown $USER:$USER /storage -R
+```
+
+- [x] Find `UUID` of desired partiton
+```bash
+lsblk -f
+```
+
+    ??? abstract "lsblk output"
+        ```bash hl_lines="5"
+        NAME   FSTYPE FSVER LABEL   UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+        sda                                                                             
+        ├─sda1 vfat   FAT32         06FB-2B2F                             435.8M    15% /boot
+        ├─sda2 ext4   1.0           a92c4d62-2c87-4f5b-a4cc-3a96c926232e  124.9G    10% /
+        └─sda3 ext4   1.0   STORAGE a1effe8d-b376-4d1c-b53a-5b46dde3d026                
+        zram0                                                                           [SWAP]
+        ```
+
+- [x] Add entry to `fstab`
+```bash title="sudoedit /etc/fstab"
+# /dev/sda3 Local Storage block
+UUID=a1effe8d-b376-4d1c-b53a-5b46dde3d026 /storage  ext4  rw,relatime,defaults  0 2
+```
+
+- [ ] Fix permissions if required
+```bash
+sudo chown $USER:$USER /storage -R
+```
+
+### SMB
+- [x] Create `lab` and `mountDirs` with correct persmissions
 ```bash
 sudo mkdir -pv /lab/{mdroot,piroot} &&\
 sudo chown $USER:$USER /lab -R

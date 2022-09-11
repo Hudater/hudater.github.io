@@ -91,3 +91,5 @@ This website grows per my convenience. I hope it may be useful to you too!
         - [x] [Basic](linux/basic.md "Basic setup for Linux post-install")
         - [x] [Desktop](linux/desktop.md "Setup for Desktop Linux")
         - [x] [Server](linux/server.md "Setup for linux servers")
+    - [ ] Virtualization
+        - [X] [Proxmox](linux/proxmox.md "Proxmox server")
