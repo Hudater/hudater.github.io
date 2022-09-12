@@ -211,12 +211,12 @@ EOT
 
 - [x] CD into mkdocs folder
     ```bash
-    cd ~/GitIt/SyncFiles/hudater.github.io/docs
+    cd ~/GitIt/SyncFiles/hudater.github.io
     ```
 
 - [x] Install requirements from file
     ```bash
-    pip3 install -r requirements.txt
+    pip3 install -r docs/requirements.txt
     ```
 
 # Not necessary but might be useful
