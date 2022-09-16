@@ -36,7 +36,7 @@ version: "3.7"
 services:
   qbittorrent:
     container_name: qbit
-    image: hotio/qbittorrent:release-4.3.9
+    image: hotio/qbittorrent:latest
     networks:
       - proxy # rename this to your custom docker network
     ports:
@@ -63,3 +63,14 @@ networks:
 mkdir -p "${CFG_DIR}"/qbittorrent
 docker compose up -d
 ```
+
+## Settings
+```bash title="Path settings line-by-line"
+/data/Torrents/complete
+/data/Torrents/downloading
+/data/Torrents/torfiles/bak/added
+/data/Torrents/torfiles/bak/complete
+/data/Torrents/torfiles
+```
+
+<!-- TODO: Add image here -->
