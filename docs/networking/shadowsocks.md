@@ -25,6 +25,9 @@ Shadowsocks is a secure split proxy loosely based on SOCKS5
 !!! warning
     This Guide assumes there's no firewall like UFW
 
+!!! todo
+    Move client-side to opnsense
+
 #### Server Side
 
 - [x] Install Shadowsocks-libev
@@ -80,7 +83,7 @@ Shadowsocks is a secure split proxy loosely based on SOCKS5
       "server":["server.ip.or.domain"],
       "mode":"tcp_and_udp",
       "server_port":8969,
-      "local_address":"192.168.29.11",
+      "local_address":"media.lan",
       "local_port":1080,
       "password":"samePasswordAsServerHere",
       "timeout":60,
