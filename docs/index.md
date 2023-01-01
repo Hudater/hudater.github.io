@@ -11,7 +11,7 @@ description: Homepage of this glorious website
 # Welcome to my personal documentation
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Hudater/hudater.github.io/main?color=4051B5&style=for-the-badge)](https://github.com/Hudater/hudater.github.io/commits/main){:target="_blank" rel="noopener noreferrer"}
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Hudater/hudater.github.io/ci?color=4051B5&style=for-the-badge)](https://github.com/Hudater/hudater.github.io/actions){:target="_blank" rel="noopener noreferrer"}
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Hudater/hudater.github.io/.github/workflows/ci.yml?color=4051B5&style=for-the-badge)](https://github.com/Hudater/hudater.github.io/actions){:target="_blank" rel="noopener noreferrer"}
 [![Pages status](https://img.shields.io/website?color=4051B5&style=for-the-badge&url=https%3A%2F%2Fdocs.haops.dev%2F)](https://docs.haops.dev/){:target="_blank" rel="noopener noreferrer"}
 
 Centralized documentation for my Homelab, OS setup and possibly more  
