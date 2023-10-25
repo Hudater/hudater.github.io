@@ -109,7 +109,7 @@ theme:
 # Plugins and Md extensions
 plugins:
   - search
-    #  - pdf-export #TODO: enable this plugin on push to github
+  - pdf-export #TODO: enable this plugin on push to github
   - tags:
       tags_file: extras/tags.md
   - minify:
