@@ -12,7 +12,7 @@ description: Homepage of this glorious website
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Hudater/hudater.github.io/main?color=4051B5&style=for-the-badge)](https://github.com/Hudater/hudater.github.io/commits/main){:target="_blank" rel="noopener noreferrer"}
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Hudater/hudater.github.io/.github/workflows/ci.yml?color=4051B5&style=for-the-badge)](https://github.com/Hudater/hudater.github.io/actions){:target="_blank" rel="noopener noreferrer"}
-[![Pages status](https://img.shields.io/website?color=4051B5&style=for-the-badge&url=https%3A%2F%2Fdocs.haops.dev%2F)](https://docs.haops.dev/){:target="_blank" rel="noopener noreferrer"}
+[![Pages status](https://img.shields.io/website?color=4051B5&style=for-the-badge&url=https%3A%2F%2Fdocs.haops.dev%2F)](https://hudater.github.io/){:target="_blank" rel="noopener noreferrer"}
 
 Centralized documentation for my Homelab, OS setup and possibly more  
 This website grows per my convenience. I hope it may be useful to you too!  
