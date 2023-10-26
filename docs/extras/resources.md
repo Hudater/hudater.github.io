@@ -19,6 +19,7 @@ description: Credits and Resources to people and sites I took inspiration from
 ## Ideas for your lab
 - [Awesome Selfhosted](https://github.com/awesome-selfhosted/awesome-selfhosted "Awesome Selfhosted"){:target="_blank" rel="noopener noreferrer"}
 - [Awesome Sysadmin](https://github.com/awesome-foss/awesome-sysadmin "Awesome Sysadmin"){:target="_blank" rel="noopener noreferrer"}
+- [Awesome Selfhosted but better UI](https://awweso.me/ "Awesome Selfhosted but better UI"){:target="_blank" rel="noopener noreferrer"}
 - [Descriptive Awesome Selfhosted](https://github.com/mikeroyal/Self-Hosting-Guide "Descriptive Awesome Selfhosted"){:target="_blank" rel="noopener noreferrer"}
 - [Docker getting started by Selfhostedpro](https://github.com/SelfhostedPro/awesome-docker "Docker getting started by Selfhostedpro"){:target="_blank" rel="noopener noreferrer"}
 - [Front ends for various Applications](https://github.com/mendel5/alternative-front-ends "Front ends for various Applications"){:target="_blank" rel="noopener noreferrer"}
