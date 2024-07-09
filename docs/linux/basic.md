@@ -8,12 +8,12 @@ description: Basic setup for Linux for both Desktop and Server
 This page would define setup of basic installation with my bare minimum to get further the installation to either a server or desktop usecase
 
 !!! info
-    Run these using your standard user with sudo if required  
+    Run these using your standard user with sudo if required
 
 ## DotFiles
 ### Create Useful Directories
 ```bash
-mkdir -pv ~/Bench/Mount ~/GitIt/SyncFiles ~/info
+mkdir -pv ~/Bench/Mount $SYNCFILES
 ```
 ```bash title="Extra for Desktop"
 mkdir -pv ~/GitIt/Wallpapers-PC ~/Downloads
@@ -21,7 +21,7 @@ mkdir -pv ~/GitIt/Wallpapers-PC ~/Downloads
 
 ### Syncthing
 - [x] Install [Syncthing](/filesv/syncthing/)
-- [x] Sync `~/GitIt/SyncFiles` folder with following ignore patterns
+- [x] Sync `$SYNCFILES` folder with following ignore patterns
 ```bash
 .git
 dotsPr/ssh/.ssh/known_hosts
@@ -36,35 +36,35 @@ configBak/fenrus
 ### Symlink dotfiles
 #### dots
 === "Media Server"
-    ```bash title="cd ~/GitIt/SyncFiles/dots"
+    ```bash title="cd $SYNCFILES/dots"
     stow -vt ~ debSvMisc/ bpytop/ htop/ neofetch/ nvim/ templates/ vim/ zsh/
     ```
 
 === "PC"
-    ```bash title="cd ~/GitIt/SyncFiles/dots"
+    ```bash title="cd $SYNCFILES/dots"
     stow -vt ~ alacritty/ awesome/ bpytop/ compton/ htop/ kitty/ neofetch/ nitrogen/ nvim/ pcMisc/ pcVol/ rofi/ templates/ theming/ vim/ zsh/
     ```
 
 === "Pi"
-    ```bash title="cd ~/GitIt/SyncFiles/dots"
+    ```bash title="cd $SYNCFILES/dots"
     stow -vt ~ bpytop/ htop/ neofetch/ nvim/ templates/ piMisc/ vim/ zsh/
     ```
 
 
 #### dotsPr
 === "Media Server"
-    ```bash title="cd ~/GitIt/SyncFiles/dotsPr"
-    stow -vt ~ debSvHome/ env/ extras/ git/ ssh/
+    ```bash title="cd $SYNCFILES/dotsPr"
+    stow -vt ~ debSvHome/ env/ git/ ssh/
     ```
 
 === "PC"
-    ```bash title="cd ~/GitIt/SyncFiles/dotsPr"
-    stow -vt ~ env/ extras/ git/ pcHome/ redshift/ ssh/
+    ```bash title="cd $SYNCFILES/dotsPr"
+    stow -vt ~ env/ git/ pcHome/ redshift/ ssh/
     ```
 
 === "Pi"
-    ```bash title="cd ~/GitIt/SyncFiles/dotsPr"
-    stow -vt ~ env/ git/ extras/ piHome/ ssh/
+    ```bash title="cd $SYNCFILES/dotsPr"
+    stow -vt ~ env/ git/ piHome/ ssh/
     ```
 
 ### Vim Plug
@@ -211,7 +211,7 @@ EOT
 
 - [x] CD into mkdocs folder
     ```bash
-    cd ~/GitIt/SyncFiles/hudater.github.io
+    cd $SYNCFILES/hudater.github.io
     ```
 
 - [x] Install requirements from file

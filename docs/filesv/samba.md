@@ -33,41 +33,41 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
 === "Media Server"
 
     ```
-[global]
-  workgroup = WORKGROUP
-  min protocol = SMB2
-  client min protocol = SMB2
-  server string = Media SMB
-  server role = standalone server
-  log file = /usr/local/samba/var/log.%m
-  max log size = 50
-  dns proxy = no
+    [global]
+      workgroup = WORKGROUP
+      min protocol = SMB2
+      client min protocol = SMB2
+      server string = Media SMB
+      server role = standalone server
+      log file = /usr/local/samba/var/log.%m
+      max log size = 50
+      dns proxy = no
 
-[mdroot]
-  comment = Sharing root over samba for authed users
-  path = /
-  force user = putin
-  force group = putin
-  create mask = 0664
-  force create mode = 0664
-  directory mask = 0775
-  force directory mode = 0775
-  public = no
-  writable = yes
-  browsable = yes
+    [mdroot]
+      comment = Sharing root over samba for authed users
+      path = /
+      force user = hudater
+      force group = hudater
+      create mask = 0664
+      force create mode = 0664
+      directory mask = 0775
+      force directory mode = 0775
+      public = no
+      writable = yes
+      browsable = yes
 
-[mdmnt]
-  comment = Sharing MergerFS Folder publicly with no read-write
-  path = /mnt
-  force user = putin
-  force group = putin
-  create mask = 0664
-  force create mode = 0664
-  directory mask = 0775
-  force directory mode = 0775
-  public = yes
-  writable = no
-  browsable = yes
+    [mdmnt]
+      comment = Sharing MergerFS Folder publicly with no read-write
+      path = /mnt
+      force user = hudater
+      force group = hudater
+      create mask = 0664
+      force create mode = 0664
+      directory mask = 0775
+      force directory mode = 0775
+      public = yes
+      writable = no
+      browsable = yes
     ```
 
 === "Pi"
@@ -129,12 +129,12 @@ Samba is an implementation of SMB protocol. It serves as a general purpose file 
 
     === "Media Server"
         ```bash
-        sudo cp /home/$USER/GitIt/SyncFiles/configBak/samba/acer/acer.smb.conf /etc/samba/smb.conf
+        sudo cp $SYNCFILES/configBak/samba/acer/acer.smb.conf /etc/samba/smb.conf
         ```
 
     === "Pi"
         ```bash
-        sudo cp /home/$USER/GitIt/SyncFiles/configBak/samba/pi/pi.smb.conf /etc/samba/smb.conf
+        sudo cp $SYNCFILES/configBak/samba/pi/pi.smb.conf /etc/samba/smb.conf
         ```
 
 - [x] Set smb password for user
