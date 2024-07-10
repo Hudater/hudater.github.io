@@ -6,12 +6,12 @@
 
 
 ## Quick start guide for localhost
--[1] Install requirements
+- [1] Install requirements
 ```bash
 pip3 install -r docs/requirements.txt
 ```
 
--[2] Run MkDocs on port 4444 accessible to all IPs
+- [2] Run MkDocs on port 4444 accessible to all IPs
 ```bash
 mkdocs serve -v --dev-addr=0.0.0.0:4444
 ```
