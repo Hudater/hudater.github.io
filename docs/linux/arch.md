@@ -311,7 +311,7 @@ useradd -m -u 1000 -G wheel hudater
 
 - [x] Password for standard user
 ```bash
-passwd userName
+passwd hudater
 ```
 
 - [x] Edit sudoers file
