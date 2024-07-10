@@ -306,7 +306,7 @@ passwd root
 
 - [x] Create standard user
 ```bash
-useradd -m -u 1000 -G wheel userName
+useradd -m -u 1000 -G wheel hudater
 ```
 
 - [x] Password for standard user

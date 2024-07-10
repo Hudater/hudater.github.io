@@ -16,7 +16,7 @@ This page would define setup of basic installation with my bare minimum to get f
 mkdir -pv ~/Bench/Mount $SYNCFILES
 ```
 ```bash title="Extra for Desktop"
-mkdir -pv ~/GitIt/Wallpapers-PC ~/Downloads
+mkdir -pv ~/Downloads
 ```
 
 ### Syncthing
