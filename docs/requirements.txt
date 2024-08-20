@@ -1,4 +1,4 @@
-mkdocs-material==9.5.31
+mkdocs-material==9.5.32
 markdown>=3.2
 mkdocs-pdf-export-plugin==0.5.10
 mkdocs-minify-plugin==0.8.0
