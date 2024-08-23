@@ -160,3 +160,20 @@ resolution 1920 1080
 include themes/rEFInd-glassy/theme.conf
 EOT
 ```
+
+### Wireguard
+
+- [x] Import a wireguard config using `nmcli`
+```bash
+nmcli connection import type wireguard file $SYNCFILES/configBak/wireguard/Zurich/pc.conf
+```
+
+- [x] Rename connection name from `pc` to `Zurich`
+```bash
+nmcli connection modify pc connection.id "Zurich"
+```
+
+- [x] Confirm that VPN connection is established
+```bash
+curl ifconfig.me
+```
