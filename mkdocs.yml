@@ -63,7 +63,7 @@ site_name: Hudater Docs
 site_description: Centralized documentation for docker and more...
 site_author: Hudater
 site_url: https://docs.haops.dev/
-edit_uri: edit/main/docs/
+edit_uri: blob/main/docs/
 docs_dir: docs
 repo_name: Hudater/hudater.github.io
 repo_url: https://github.com/Hudater/hudater.github.io
@@ -82,10 +82,12 @@ theme:
     - navigation.expand
     - navigation.tabs
     - navigation.top
+    - navigation.footer
     # - navigation.tabs.sticky
     - content.tabs.link
     - search.share
     - content.code.annotate
+    - content.code.copy
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -110,7 +112,7 @@ theme:
 # Plugins and Md extensions
 plugins:
   - search
-  - pdf-export #TODO: enable this plugin on push to github
+#  - pdf-export #TODO: enable this plugin on push to github
   - tags:
       tags_file: extras/tags.md
   - minify:
@@ -122,7 +124,6 @@ plugins:
 
 markdown_extensions:
   - admonition
-  - meta
   - attr_list
   - tables
   - pymdownx.critic
@@ -142,8 +143,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji 
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.tasklist:
       custom_checkbox: true
   - toc:
@@ -166,5 +167,9 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/Hudater
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/hudater_
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/hudater/
 
 copyright: Copyright &copy; 2024 Hudater
